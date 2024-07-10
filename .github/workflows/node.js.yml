@@ -16,13 +16,18 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '20.X'
+
+    - name: Change to scripts directory
+      run: cd scripts
 
     - name: Install dependencies
       run: npm install
+      working-directory: ./scripts
 
     - name: Build project
       run: npm run build
+      working-directory: ./scripts
 
     - name: Deploy
       env:
@@ -30,3 +35,4 @@ jobs:
         EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
         EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
       run: npm run deploy
+      working-directory: ./scripts
