@@ -1,9 +1,6 @@
-// Cargar las variables de entorno
-require('dotenv').config();
-
 // Inicia EmailJS con tu User ID
 (function(){
-    emailjs.init(process.env.EMAILJS_USER_ID); // Reemplaza process.env.EMAILJS_USER_ID con tu variable de entorno
+    emailjs.init("OymTMs4wyLL2auEw7"); // Reemplaza YOUR_USER_ID con tu User ID de EmailJS
 })();
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // Recoge los datos del formulario
         const formData = new FormData(form);
         const data = {
-            to_name: "Destinatario", // Puedes cambiar esto según tu configuración
             servicio: formData.get("servicio"),
             nombre: formData.get("nombre"),
             apellido: formData.get("apellido"),
@@ -28,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         // Envía el formulario usando EmailJS
-        emailjs.send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, data)
+        emailjs.send("service_xb5qah1", "template_qvobun8", data)
             .then(function(response) {
                 // Muestra un popup de confirmación
                 alert("Información enviada correctamente");
