@@ -141,7 +141,7 @@ const EducationSection = () => {
               { label: 'Proyectos Realizados', value: '20+' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-playfair font-bold text-[#0A192F] mb-2">
+                <div className="text-3xl font-playfair font-bold text-primary mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">

@@ -39,7 +39,7 @@ const HeroSection = () => {
                 
                 <h1 className="text-4xl md:text-6xl font-playfair font-bold leading-tight">
                   Hola, soy
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0A192F] to-[#C5A880]">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#C5A880]">
                     José de Jesús Hernández Vázquez
                   </span>
                 </h1>
