@@ -55,7 +55,16 @@ const HeroSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="group">
+                <Button 
+                  size="lg" 
+                  className="group"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/cv_es_johernandez.pdf';
+                    link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
+                    link.click();
+                  }}
+                >
                   <Download className="w-4 h-4 mr-2 group-hover:animate-pulse" />
                   Descargar mi CV
                 </Button>

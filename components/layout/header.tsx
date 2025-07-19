@@ -74,10 +74,9 @@ const Header = () => {
               size="sm"
               className="hidden md:flex items-center space-x-2"
               onClick={() => {
-                // Simulate CV download
                 const link = document.createElement('a');
-                link.href = '#';
-                link.download = 'CV_Estudiante_Internacional.pdf';
+                link.href = '/cv_es_johernandez.pdf';
+                link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
                 link.click();
               }}
             >
@@ -132,8 +131,8 @@ const Header = () => {
                 className="w-fit flex items-center space-x-2"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '#';
-                  link.download = 'CV_Estudiante_Internacional.pdf';
+                  link.href = '/cv_es_johernandez.pdf';
+                  link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
                   link.click();
                 }}
               >
