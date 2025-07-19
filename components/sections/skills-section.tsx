@@ -154,7 +154,7 @@ const SkillsSection = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-lg flex items-center justify-center mx-auto">
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-3xl font-playfair font-bold text-[#0A192F]">
+                  <div className="text-3xl font-playfair font-bold text-primary">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">

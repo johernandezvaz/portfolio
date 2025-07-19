@@ -15,7 +15,7 @@ const SectionTitle = ({ title, subtitle, className = '' }: SectionTitleProps) =>
           {subtitle}
         </p>
       )}
-      <div className="w-24 h-1 bg-gradient-to-r from-[#0A192F] to-[#C5A880] mx-auto mt-6 rounded-full"></div>
+      <div className="w-24 h-1 bg-gradient-to-r from-primary to-[#C5A880] mx-auto mt-6 rounded-full"></div>
     </div>
   );
 };
