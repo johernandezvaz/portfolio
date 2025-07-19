@@ -8,33 +8,33 @@ const MotivationSection = () => {
   const motivations = [
     {
       icon: Target,
-      title: 'Innovation Technologique',
-      description: 'Contribuer au développement de solutions IoT et d\'IA qui transforment notre quotidien',
+      title: 'Innovación Tecnológica',
+      description: 'Contribuir al desarrollo de soluciones IoT e IA que transformen nuestro día a día',
     },
     {
       icon: BookOpen,
-      title: 'Apprentissage Continu',
-      description: 'Explorer constamment de nouvelles technologies et méthodologies de développement',
+      title: 'Aprendizaje Continuo',
+      description: 'Explorar constantemente nuevas tecnologías y metodologías de desarrollo',
     },
     {
       icon: Users,
-      title: 'Collaboration Internationale',
-      description: 'Travailler avec des équipes multiculturelles sur des projets d\'envergure mondiale',
+      title: 'Colaboración Internacional',
+      description: 'Trabajar con equipos multiculturales en proyectos de alcance mundial',
     },
     {
       icon: Lightbulb,
-      title: 'Solutions Durables',
-      description: 'Développer des technologies respectueuses de l\'environnement et socialement responsables',
+      title: 'Soluciones Sostenibles',
+      description: 'Desarrollar tecnologías respetuosas con el medio ambiente y socialmente responsables',
     },
   ];
 
   return (
-    <section id="objectif" className="py-20 bg-muted/30">
+    <section id="objetivo" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Mes Objectifs Professionnels"
-            subtitle="Ma vision pour l'avenir de la technologie et mon rôle dans l'innovation"
+            title="Mis Objetivos Profesionales"
+            subtitle="Mi visión para el futuro de la tecnología y mi papel en la innovación"
           />
 
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
@@ -44,45 +44,45 @@ const MotivationSection = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2 text-2xl font-playfair">
                     <Heart className="w-6 h-6 text-[#C5A880]" />
-                    <span>Ma Vision Technologique</span>
+                    <span>Mi Visión Tecnológica</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    En tant qu'ingénieur en systèmes informatiques passionné par l'innovation, 
-                    je me consacre au développement de solutions technologiques qui ont un impact 
-                    positif sur la société. Mon expertise en <strong>IoT</strong>, <strong>intelligence 
-                    artificielle</strong> et <strong>développement web</strong> me permet de créer 
-                    des systèmes intégrés qui répondent aux défis contemporains.
+                    Como ingeniero en sistemas informáticos apasionado por la innovación, 
+                    me dedico al desarrollo de soluciones tecnológicas que tienen un impacto 
+                    positivo en la sociedad. Mi experiencia en <strong>IoT</strong>, <strong>inteligencia 
+                    artificial</strong> y <strong>desarrollo web</strong> me permite crear 
+                    sistemas integrados que responden a los desafíos contemporáneos.
                   </p>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    Mon parcours académique et professionnel m'a permis de développer une approche 
-                    holistique de la technologie, combinant les aspects techniques avec une 
-                    compréhension profonde des besoins utilisateurs. Je m'intéresse particulièrement 
-                    aux <strong>systèmes embarqués</strong>, à l'<strong>optimisation énergétique</strong> 
-                    et aux <strong>applications d'IA pour le bien social</strong>.
+                    Mi trayectoria académica y profesional me ha permitido desarrollar un enfoque 
+                    holístico de la tecnología, combinando aspectos técnicos con una 
+                    comprensión profunda de las necesidades del usuario. Me interesan particularmente 
+                    los <strong>sistemas embebidos</strong>, la <strong>optimización energética</strong> 
+                    y las <strong>aplicaciones de IA para el bien social</strong>.
                   </p>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    Mes projets, comme <strong>SigmundFiles</strong> (plateforme médicale avec IA) 
-                    et <strong>Lumier</strong> (système de détection intelligente), illustrent ma 
-                    capacité à transformer des idées innovantes en solutions concrètes. Je crois 
-                    fermement que la technologie doit être accessible, durable et au service de 
-                    l'humanité.
+                    Mis proyectos, como <strong>KleinNotes</strong> (plataforma médica con IA) 
+                    y <strong>Lumier</strong> (sistema de detección inteligente), ilustran mi 
+                    capacidad para transformar ideas innovadoras en soluciones concretas. Creo 
+                    firmemente que la tecnología debe ser accesible, sostenible y al servicio de 
+                    la humanidad.
                   </p>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    Mon objectif est de continuer à développer des technologies qui repoussent 
-                    les limites du possible, tout en maintenant un focus sur l'impact social 
-                    et environnemental. Je souhaite contribuer à des projets qui façonnent 
-                    l'avenir de notre société numérique.
+                    Mi objetivo es continuar desarrollando tecnologías que empujen 
+                    los límites de lo posible, manteniendo un enfoque en el impacto social 
+                    y ambiental. Deseo contribuir a proyectos que den forma 
+                    al futuro de nuestra sociedad digital.
                   </p>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    Avec ma maîtrise de plusieurs langues et mon expérience internationale, 
-                    je suis prêt à relever les défis technologiques de demain dans un 
-                    environnement multiculturel et collaboratif.
+                    Con mi dominio de varios idiomas y mi experiencia internacional, 
+                    estoy preparado para enfrentar los desafíos tecnológicos del mañana en un 
+                    entorno multicultural y colaborativo.
                   </p>
                 </CardContent>
               </Card>
@@ -116,23 +116,23 @@ const MotivationSection = () => {
           <Card className="bg-gradient-to-r from-[#0A192F]/5 to-[#C5A880]/5">
             <CardHeader>
               <CardTitle className="text-center text-2xl font-playfair">
-                Domaines d'Expertise et d'Intérêt
+                Áreas de Experiencia e Interés
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 {[
                   {
-                    title: 'Internet des Objets (IoT)',
-                    description: 'Développement de systèmes embarqués et solutions connectées'
+                    title: 'Internet de las Cosas (IoT)',
+                    description: 'Desarrollo de sistemas embebidos y soluciones conectadas'
                   },
                   {
-                    title: 'Intelligence Artificielle',
-                    description: 'Machine Learning, Computer Vision et traitement du langage naturel'
+                    title: 'Inteligencia Artificial',
+                    description: 'Machine Learning, Computer Vision y procesamiento de lenguaje natural'
                   },
                   {
-                    title: 'Développement Full Stack',
-                    description: 'Applications web modernes et architectures scalables'
+                    title: 'Desarrollo Full Stack',
+                    description: 'Aplicaciones web modernas y arquitecturas escalables'
                   }
                 ].map((interest, index) => (
                   <div key={index} className="space-y-3">

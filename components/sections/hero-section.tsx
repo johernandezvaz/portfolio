@@ -13,7 +13,7 @@ const HeroSection = () => {
   }, []);
 
   const scrollToNext = () => {
-    const nextSection = document.getElementById('a-propos');
+    const nextSection = document.getElementById('acerca-de');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -23,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <section
-      id="accueil"
+      id="inicio"
       className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-background to-muted/20"
     >
       <div className="container mx-auto px-4 py-20">
@@ -34,33 +34,42 @@ const HeroSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4" />
-                  <span>Étudiant International - Mexique</span>
+                  <span>Estudiante Internacional - México</span>
                 </div>
                 
                 <h1 className="text-4xl md:text-6xl font-playfair font-bold leading-tight">
-                  Bonjour, je suis
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0A192F] to-[#C5A880]">
+                  Hola, soy
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#C5A880]">
                     José de Jesús Hernández Vázquez
                   </span>
                 </h1>
 
                 <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                  Ingénieur en systèmes informatiques spécialisé en IoT et développement web, 
-                  passionné par l'innovation technologique et l'intelligence artificielle.
+                  Ingeniero en sistemas informáticos especializado en IoT y desarrollo web, 
+                  apasionado por la innovación tecnológica y la inteligencia artificial.
                 </p>
 
                 <p className="text-lg text-muted-foreground italic">
-                  "La technologie au service de l'innovation et du progrès humain."
+                  &quot;La tecnología al servicio de la innovación y el progreso humano.&quot;
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="group">
+                <Button 
+                  size="lg" 
+                  className="group"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/cv_es_johernandez.pdf';
+                    link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
+                    link.click();
+                  }}
+                >
                   <Download className="w-4 h-4 mr-2 group-hover:animate-pulse" />
-                  Télécharger mon CV
+                  Descargar mi CV
                 </Button>
                 <Button variant="outline" size="lg" onClick={scrollToNext}>
-                  Découvrir mon parcours
+                  Descubrir mi trayectoria
                   <ChevronDown className="w-4 h-4 ml-2" />
                 </Button>
               </div>
@@ -73,8 +82,8 @@ const HeroSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-full blur-3xl opacity-20 animate-pulse"></div>
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl">
                     <Image
-                      src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800"
-                      alt="Portrait professionnel de José de Jesús Hernández Vázquez"
+                      src="/jose-headshot.jpg"
+                      alt="Retrato profesional de José de Jesús Hernández Vázquez"
                       fill
                       className="object-cover"
                       priority

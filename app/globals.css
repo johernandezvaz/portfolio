@@ -85,6 +85,22 @@
   }
 }
 
+/* Ensure proper contrast in dark mode */
+.dark .text-[#0A192F] {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .bg-[#0A192F] {
+  background-color: hsl(var(--primary)) !important;
+}
+
+.dark .from-[#0A192F] {
+  --tw-gradient-from: hsl(var(--primary)) !important;
+}
+
+.dark .to-[#0A192F] {
+  --tw-gradient-to: hsl(var(--primary)) !important;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

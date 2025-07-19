@@ -30,12 +30,12 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'accueil', label: 'Accueil' },
-    { id: 'a-propos', label: 'À propos' },
-    { id: 'parcours', label: 'Parcours' },
-    { id: 'projets', label: 'Projets' },
-    { id: 'competences', label: 'Compétences' },
-    { id: 'objectif', label: 'Objectif' },
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'acerca-de', label: 'Acerca de' },
+    { id: 'trayectoria', label: 'Trayectoria' },
+    { id: 'proyectos', label: 'Proyectos' },
+    { id: 'habilidades', label: 'Habilidades' },
+    { id: 'objetivo', label: 'Objetivo' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -74,10 +74,9 @@ const Header = () => {
               size="sm"
               className="hidden md:flex items-center space-x-2"
               onClick={() => {
-                // Simulate CV download
                 const link = document.createElement('a');
-                link.href = '#';
-                link.download = 'CV_Etudiant_International.pdf';
+                link.href = '/cv_es_johernandez.pdf';
+                link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
                 link.click();
               }}
             >
@@ -132,13 +131,13 @@ const Header = () => {
                 className="w-fit flex items-center space-x-2"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '#';
-                  link.download = 'CV_Etudiant_International.pdf';
+                  link.href = '/cv_es_johernandez.pdf';
+                  link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
                   link.click();
                 }}
               >
                 <Download className="w-4 h-4" />
-                <span>Télécharger CV</span>
+                <span>Descargar CV</span>
               </Button>
             </div>
           </nav>

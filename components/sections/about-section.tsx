@@ -8,33 +8,33 @@ const AboutSection = () => {
   const highlights = [
     {
       icon: Globe,
-      title: 'Expertise Internationale',
-      description: 'Expérience multiculturelle avec maîtrise de l\'espagnol, français et anglais',
+      title: 'Experiencia Internacional',
+      description: 'Experiencia multicultural con dominio del español, francés e inglés',
     },
     {
       icon: BookOpen,
-      title: 'Formation Technique',
-      description: 'Ingénierie des systèmes informatiques avec spécialisation en systèmes embarqués',
+      title: 'Formación Técnica',
+      description: 'Ingeniería en sistemas informáticos con especialización en sistemas embebidos',
     },
     {
       icon: Users,
-      title: 'Expérience Professionnelle',
-      description: 'Développeur Full Stack avec expertise en technologies web modernes',
+      title: 'Experiencia Profesional',
+      description: 'Desarrollador Full Stack con experiencia en tecnologías web modernas',
     },
     {
       icon: Target,
-      title: 'Innovation IoT',
-      description: 'Passionné par l\'Internet des Objets et l\'intelligence artificielle',
+      title: 'Innovación IoT',
+      description: 'Apasionado por el Internet de las Cosas y la inteligencia artificial',
     },
   ];
 
   return (
-    <section id="a-propos" className="py-20 bg-muted/30">
+    <section id="acerca-de" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="À propos de moi"
-            subtitle="Découvrez mon profil, mes compétences et mes aspirations technologiques"
+            title="Acerca de mí"
+            subtitle="Descubre mi perfil, mis habilidades y mis aspiraciones tecnológicas"
           />
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -42,28 +42,28 @@ const AboutSection = () => {
             <div className="space-y-6">
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed">
-                  Originaire du <strong>Mexique</strong>, je suis un ingénieur en systèmes informatiques 
-                  passionné par le développement web, mobile et l'Internet des Objets (IoT). Mon parcours 
-                  m'a permis de développer une expertise solide en technologies modernes et une approche 
-                  innovante des défis technologiques contemporains.
+                  Originario de <strong>México</strong>, soy un ingeniero en sistemas informáticos 
+                  apasionado por el desarrollo web, móvil y el Internet de las Cosas (IoT). Mi trayectoria 
+                  me ha permitido desarrollar una sólida experiencia en tecnologías modernas y un enfoque 
+                  innovador hacia los desafíos tecnológicos contemporáneos.
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  Maîtrisant l'<strong>espagnol</strong> (langue maternelle), le <strong>français</strong> (B2) 
-                  et l'<strong>anglais</strong> (B2), je m'intéresse particulièrement au développement web 
-                  et mobile, à l'IoT, aux systèmes embarqués et à l'intelligence artificielle. Ma curiosité 
-                  me pousse à explorer de nouvelles technologies et à créer des applications innovantes.
+                  Dominando el <strong>español</strong> (lengua materna), el <strong>francés</strong> (B2) 
+                  y el <strong>inglés</strong> (B2), me intereso particularmente en el desarrollo web 
+                  y móvil, IoT, sistemas embebidos e inteligencia artificial. Mi curiosidad 
+                  me impulsa a explorar nuevas tecnologías y crear aplicaciones innovadoras.
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  Mon objectif est de contribuer à des projets qui repoussent les limites de la technologie, 
-                  en combinant mes compétences techniques avec une vision créative pour développer des 
-                  solutions qui ont un impact positif sur la société.
+                  Mi objetivo es contribuir a proyectos que empujen los límites de la tecnología, 
+                  combinando mis habilidades técnicas con una visión creativa para desarrollar 
+                  soluciones que tengan un impacto positivo en la sociedad.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {['IoT', 'Développement Web', 'Intelligence Artificielle', 'Innovation'].map((tag) => (
+                {['IoT', 'Desarrollo Web', 'Inteligencia Artificial', 'Innovación'].map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1 bg-[#C5A880]/10 text-[#C5A880] rounded-full text-sm font-medium"
@@ -99,8 +99,8 @@ const AboutSection = () => {
           {/* Quote Section */}
           <div className="mt-16 text-center">
             <blockquote className="text-2xl md:text-3xl font-playfair italic text-muted-foreground max-w-4xl mx-auto">
-              "Je crois fermement que la technologie doit servir l'humanité et que l'innovation 
-              naît de la curiosité et de la persévérance."
+              &quot;Creo firmemente que la tecnología debe servir a la humanidad y que la innovación 
+              nace de la curiosidad y la perseverancia.&quot;
             </blockquote>
             <cite className="block mt-4 text-sm font-medium text-[#C5A880]">
               - José de Jesús Hernández Vázquez

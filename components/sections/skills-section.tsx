@@ -8,46 +8,46 @@ import SectionTitle from '@/components/ui/section-title';
 
 const SkillsSection = () => {
   const languages = [
-    { name: 'Espagnol', level: 100, description: 'Langue maternelle' },
-    { name: 'Français', level: 85, description: 'Niveau B2 - Usage professionnel' },
-    { name: 'Anglais', level: 80, description: 'Niveau B2 - Communication fluide' },
+    { name: 'Español', level: 100, description: 'Lengua materna' },
+    { name: 'Francés', level: 85, description: 'Nivel B2 - Uso profesional' },
+    { name: 'Inglés', level: 90, description: 'Nivel C1 - Comunicación fluida' },
   ];
 
   const technicalSkills = [
-    { name: 'Python', level: 95, category: 'Programmation' },
-    { name: 'JavaScript/TypeScript', level: 88, category: 'Développement Web' },
+    { name: 'Python', level: 95, category: 'Programación' },
+    { name: 'JavaScript/TypeScript', level: 88, category: 'Desarrollo Web' },
     { name: 'React/Next.js', level: 85, category: 'Frontend' },
     { name: 'PyTorch/TensorFlow', level: 80, category: 'IA/ML' },
     { name: 'Node.js', level: 82, category: 'Backend' },
     { name: 'Django/Flask', level: 85, category: 'Frameworks Python' },
-    { name: 'C/C++', level: 78, category: 'Systèmes Embarqués' },
+    { name: 'C/C++', level: 78, category: 'Sistemas Embebidos' },
     { name: 'MicroPython', level: 80, category: 'IoT' },
-    { name: 'SQL/NoSQL', level: 75, category: 'Bases de données' },
+    { name: 'SQL/NoSQL', level: 75, category: 'Bases de datos' },
     { name: 'HTML/CSS', level: 90, category: 'Frontend' },
-    { name: 'Java', level: 70, category: 'Programmation' },
-    { name: 'Rust', level: 65, category: 'Systèmes' },
+    { name: 'Java', level: 70, category: 'Programación' },
+    { name: 'Rust', level: 65, category: 'Sistemas' },
   ];
 
   const tools = [
     'Jupyter Notebook', 'VS Code', 'PyCharm', 'Figma', 'Git/GitHub',
     'Docker', 'Postman', 'Arduino IDE', 'Raspberry Pi', 'ESP32',
-    'Matplotlib', 'Seaborn', 'NumPy', 'Scikit-Learn', 'PostgreSQL'
+    'Matplotlib', 'Seaborn', 'NumPy', 'Scikit-Learn', 'PostgreSQL', 'Stripe', 'Supabase'
   ];
 
   const methodologies = [
-    { name: 'Développement IoT', description: 'Prototypage de systèmes embarqués, intégration de capteurs et actionneurs' },
-    { name: 'Gestion de Projet', description: 'Méthodologies agiles, planification et coordination d\'équipes' },
-    { name: 'Optimisation & Performance', description: 'Amélioration des performances système et optimisation du code' },
-    { name: 'Intelligence Artificielle', description: 'Machine Learning, Deep Learning et analyse de données' },
+    { name: 'Desarrollo IoT', description: 'Prototipado de sistemas embebidos, integración de sensores y actuadores' },
+    { name: 'Gestión de Proyectos', description: 'Metodologías ágiles, planificación y coordinación de equipos' },
+    { name: 'Optimización y Rendimiento', description: 'Mejora del rendimiento del sistema y optimización de código' },
+    { name: 'Inteligencia Artificial', description: 'Machine Learning, Deep Learning y análisis de datos' },
   ];
 
   return (
-    <section id="competences" className="py-20">
+    <section id="habilidades" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Mes Compétences"
-            subtitle="Un aperçu complet de mes capacités linguistiques, techniques et méthodologiques"
+            title="Mis Habilidades"
+            subtitle="Una visión completa de mis capacidades lingüísticas, técnicas y metodológicas"
           />
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -56,7 +56,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Languages className="w-5 h-5 text-[#C5A880]" />
-                  <span>Langues</span>
+                  <span>Idiomas</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -78,7 +78,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Code className="w-5 h-5 text-[#C5A880]" />
-                  <span>Compétences Techniques</span>
+                  <span>Habilidades Técnicas</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -106,7 +106,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Settings className="w-5 h-5 text-[#C5A880]" />
-                  <span>Outils et Technologies</span>
+                  <span>Herramientas y Tecnologías</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -125,7 +125,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-[#C5A880]" />
-                  <span>Méthodologies</span>
+                  <span>Metodologías</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -145,16 +145,16 @@ const SkillsSection = () => {
           <div className="mt-12 bg-gradient-to-r from-[#0A192F]/5 to-[#C5A880]/5 rounded-2xl p-8">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               {[
-                { icon: Languages, label: 'Langues Maîtrisées', value: '3' },
-                { icon: Code, label: 'Technologies', value: '15+' },
-                { icon: Settings, label: 'Outils Professionnels', value: '15+' },
-                { icon: TrendingUp, label: 'Années d\'Expérience', value: '4+' },
+                { icon: Languages, label: 'Idiomas Dominados', value: '3' },
+                { icon: Code, label: 'Tecnologías', value: '15+' },
+                { icon: Settings, label: 'Herramientas Profesionales', value: '15+' },
+                { icon: TrendingUp, label: 'Años de Experiencia', value: '4+' },
               ].map((stat, index) => (
                 <div key={index} className="space-y-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-lg flex items-center justify-center mx-auto">
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-3xl font-playfair font-bold text-[#0A192F]">
+                  <div className="text-3xl font-playfair font-bold text-primary">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">
