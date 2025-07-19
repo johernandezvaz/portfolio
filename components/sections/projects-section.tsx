@@ -10,16 +10,16 @@ import Image from 'next/image';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "SigmundFiles - Plateforme de Gestion Médicale",
-      description: "Plateforme innovante de gestion des dossiers médicaux axée sur la psychologie, utilisant l'intelligence artificielle pour numériser les notes cliniques et analyser les modèles linguistiques.",
+      title: "SigmundFiles - Plataforma de Gestión Médica",
+      description: "Plataforma innovadora de gestión de expedientes médicos enfocada en psicología, utilizando inteligencia artificial para digitalizar notas clínicas y analizar patrones lingüísticos.",
       image: "https://images.pexels.com/photos/5912319/pexels-photo-5912319.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["Python", "TensorFlow", "Django", "PostgreSQL", "NLP"],
-      category: "Intelligence Artificielle",
-      period: "Juin 2024 - Présent",
+      category: "Inteligencia Artificial",
+      period: "Junio 2024 - Presente",
       highlights: [
-        "IA pour l'analyse de notes cliniques",
-        "Interface intuitive pour psychologues",
-        "Amélioration de la précision diagnostique"
+        "IA para análisis de notas clínicas",
+        "Interfaz intuitiva para psicólogos",
+        "Mejora en la precisión diagnóstica"
       ],
       links: {
         demo: "https://www.kaggle.com/maikua/code",
@@ -27,16 +27,16 @@ const ProjectsSection = () => {
       }
     },
     {
-      title: "Lumier - Système de Détection Intelligente",
-      description: "Système innovant de détection de présence humaine par traitement d'image, optimisant la consommation d'énergie en allumant et éteignant les lumières uniquement lorsque nécessaire.",
+      title: "Lumier - Sistema de Detección Inteligente",
+      description: "Sistema innovador de detección de presencia humana mediante procesamiento de imágenes, optimizando el consumo energético encendiendo y apagando luces solo cuando es necesario.",
       image: "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["Python", "OpenCV", "Raspberry Pi", "IoT", "Computer Vision"],
-      category: "IoT & Systèmes Embarqués",
-      period: "Janvier 2024 - Mai 2024",
+      category: "IoT y Sistemas Embebidos",
+      period: "Enero 2024 - Mayo 2024",
       highlights: [
-        "Réduction significative de la consommation énergétique",
-        "Détection en temps réel par vision par ordinateur",
-        "Applications extensibles aux systèmes de climatisation"
+        "Reducción significativa del consumo energético",
+        "Detección en tiempo real por visión computacional",
+        "Aplicaciones extensibles a sistemas de climatización"
       ],
       links: {
         demo: "#",
@@ -44,16 +44,16 @@ const ProjectsSection = () => {
       }
     },
     {
-      title: "Plateforme Web pour Cabinet Comptable",
-      description: "Site web complet pour une société de comptabilité permettant de simplifier l'accès des clients à l'information et de faciliter la communication avec l'entreprise.",
+      title: "Plataforma Web para Despacho Contable",
+      description: "Sitio web completo para una empresa de contabilidad que permite simplificar el acceso de los clientes a la información y facilitar la comunicación con la empresa.",
       image: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      category: "Développement Web",
-      period: "Février 2023 - Août 2023",
+      category: "Desarrollo Web",
+      period: "Febrero 2023 - Agosto 2023",
       highlights: [
-        "Interface client conviviale",
-        "Gestion sécurisée des données",
-        "Communication optimisée entreprise-client"
+        "Interfaz de cliente amigable",
+        "Gestión segura de datos",
+        "Comunicación optimizada empresa-cliente"
       ],
       links: {
         demo: "#",
@@ -61,16 +61,16 @@ const ProjectsSection = () => {
       }
     },
     {
-      title: "Site Web pour Laboratoire d'Essais Mécaniques",
-      description: "Plateforme web pour un laboratoire d'essais mécaniques améliorant l'accès des clients à l'information et simplifiant la communication pour les demandes de renseignements.",
+      title: "Sitio Web para Laboratorio de Ensayos Mecánicos",
+      description: "Plataforma web para un laboratorio de ensayos mecánicos que mejora el acceso de los clientes a la información y simplifica la comunicación para solicitudes de información.",
       image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-      category: "Développement Web",
-      period: "Août 2021 - Août 2022",
+      category: "Desarrollo Web",
+      period: "Agosto 2021 - Agosto 2022",
       highlights: [
-        "Interface responsive et moderne",
-        "Système de demandes en ligne",
-        "Amélioration de la communication client"
+        "Interfaz responsiva y moderna",
+        "Sistema de solicitudes en línea",
+        "Mejora en la comunicación con clientes"
       ],
       links: {
         demo: "#",
@@ -80,12 +80,12 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projets" className="py-20 bg-muted/30">
+    <section id="proyectos" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Mes Projets"
-            subtitle="Découvrez mes réalisations techniques et mes contributions à l'innovation"
+            title="Mis Proyectos"
+            subtitle="Descubre mis logros técnicos y mis contribuciones a la innovación"
           />
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -122,7 +122,7 @@ const ProjectsSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-2 flex items-center space-x-2">
                       <Tag className="w-4 h-4 text-[#C5A880]" />
-                      <span>Points clés</span>
+                      <span>Puntos clave</span>
                     </h4>
                     <ul className="space-y-1">
                       {project.highlights.map((highlight, highlightIndex) => (
@@ -138,7 +138,7 @@ const ProjectsSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Technologies utilisées</h4>
+                    <h4 className="font-semibold text-foreground mb-3">Tecnologías utilizadas</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="outline" className="text-xs">
@@ -153,12 +153,14 @@ const ProjectsSection = () => {
                       <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <ExternalLink className="w-4 h-4" />
                         <span>Voir</span>
+                        <span>Ver</span>
                       </a>
                     </Button>
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <Github className="w-4 h-4" />
                         <span>Code</span>
+                        <span>Código</span>
                       </a>
                     </Button>
                   </div>
@@ -169,7 +171,7 @@ const ProjectsSection = () => {
 
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-6">
-              Découvrez plus de projets sur mes plateformes de développement
+              Descubre más proyectos en mis plataformas de desarrollo
             </p>
             <div className="flex justify-center space-x-4">
               <Button variant="outline" asChild>

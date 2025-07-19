@@ -8,13 +8,13 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: 'José de Jesús Hernández Vázquez - Portfolio Académique',
-  description: 'Portfolio académique de José de Jesús Hernández Vázquez, ingénieur en systèmes informatiques spécialisé en IoT, développement web et intelligence artificielle.',
-  keywords: 'portfolio, ingénieur, systèmes informatiques, IoT, développement web, intelligence artificielle, José Hernández',
+  title: 'José de Jesús Hernández Vázquez - Portfolio Académico',
+  description: 'Portfolio académico de José de Jesús Hernández Vázquez, ingeniero en sistemas informáticos especializado en IoT, desarrollo web e inteligencia artificial.',
+  keywords: 'portfolio, ingeniero, sistemas informáticos, IoT, desarrollo web, inteligencia artificial, José Hernández',
   authors: [{ name: 'José de Jesús Hernández Vázquez' }],
   openGraph: {
-    title: 'José de Jesús Hernández Vázquez - Portfolio Académique',
-    description: 'Découvrez mon parcours en ingénierie informatique et mes projets innovants en IoT et IA',
+    title: 'José de Jesús Hernández Vázquez - Portfolio Académico',
+    description: 'Descubre mi trayectoria en ingeniería informática y mis proyectos innovadores en IoT e IA',
     type: 'website',
   },
 };
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"

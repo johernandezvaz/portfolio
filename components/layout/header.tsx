@@ -30,12 +30,12 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'accueil', label: 'Accueil' },
-    { id: 'a-propos', label: 'À propos' },
-    { id: 'parcours', label: 'Parcours' },
-    { id: 'projets', label: 'Projets' },
-    { id: 'competences', label: 'Compétences' },
-    { id: 'objectif', label: 'Objectif' },
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'acerca-de', label: 'Acerca de' },
+    { id: 'trayectoria', label: 'Trayectoria' },
+    { id: 'proyectos', label: 'Proyectos' },
+    { id: 'habilidades', label: 'Habilidades' },
+    { id: 'objetivo', label: 'Objetivo' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -77,7 +77,7 @@ const Header = () => {
                 // Simulate CV download
                 const link = document.createElement('a');
                 link.href = '#';
-                link.download = 'CV_Etudiant_International.pdf';
+                link.download = 'CV_Estudiante_Internacional.pdf';
                 link.click();
               }}
             >
@@ -133,12 +133,12 @@ const Header = () => {
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = '#';
-                  link.download = 'CV_Etudiant_International.pdf';
+                  link.download = 'CV_Estudiante_Internacional.pdf';
                   link.click();
                 }}
               >
                 <Download className="w-4 h-4" />
-                <span>Télécharger CV</span>
+                <span>Descargar CV</span>
               </Button>
             </div>
           </nav>

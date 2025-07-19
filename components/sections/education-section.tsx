@@ -7,53 +7,53 @@ import SectionTitle from '@/components/ui/section-title';
 const EducationSection = () => {
   const education = [
     {
-      degree: "Ingénierie des systèmes informatiques",
+      degree: "Ingeniería en sistemas informáticos",
       institution: "Instituto Tecnológico Nacional de México Campus Chihuahua II (ITCHII)",
-      location: "Chihuahua, Mexique",
-      period: "Janvier 2022 - Juillet 2026 (prévu)",
-      description: "Formation complète en ingénierie informatique avec spécialisation en systèmes embarqués et IoT.",
+      location: "Chihuahua, México",
+      period: "Enero 2022 - Julio 2026 (previsto)",
+      description: "Formación completa en ingeniería informática con especialización en sistemas embebidos e IoT.",
       achievements: [
-        "Spécialisation en systèmes embarqués",
-        "Projets innovants en IoT",
-        "Formation en intelligence artificielle"
+        "Especialización en sistemas embebidos",
+        "Proyectos innovadores en IoT",
+        "Formación en inteligencia artificial"
       ],
       status: "current"
     },
     {
-      degree: "Licence Professionnelle SARII",
+      degree: "Licencia Profesional SARII",
       institution: "IUT Saint-Dié-des-Vosges",
-      location: "France",
-      period: "Septembre 2020 - Juin 2021",
-      description: "Formation spécialisée en systèmes automatisés, réseaux et informatique industrielle.",
+      location: "Francia",
+      period: "Septiembre 2020 - Junio 2021",
+      description: "Formación especializada en sistemas automatizados, redes e informática industrial.",
       achievements: [
-        "Expertise en systèmes automatisés",
-        "Maîtrise des réseaux industriels",
-        "Perfectionnement du français"
+        "Experiencia en sistemas automatizados",
+        "Dominio de redes industriales",
+        "Perfeccionamiento del francés"
       ],
       status: "completed"
     },
     {
-      degree: "DUT Mécatronicien",
+      degree: "TSU Mecatrónica",
       institution: "Universidad Tecnológica de Chihuahua (UTCH)",
-      location: "Chihuahua, Mexique",
-      period: "Septembre 2018 - Août 2020",
-      description: "Formation technique en mécatronique, combinant mécanique, électronique et informatique.",
+      location: "Chihuahua, México",
+      period: "Septiembre 2018 - Agosto 2020",
+      description: "Formación técnica en mecatrónica, combinando mecánica, electrónica e informática.",
       achievements: [
-        "Bases solides en mécatronique",
-        "Programmation de systèmes embarqués",
-        "Intégration de capteurs et actionneurs"
+        "Bases sólidas en mecatrónica",
+        "Programación de sistemas embebidos",
+        "Integración de sensores y actuadores"
       ],
       status: "completed"
     }
   ];
 
   return (
-    <section id="parcours" className="py-20">
+    <section id="trayectoria" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Parcours Académique"
-            subtitle="Mon chemin vers l'expertise en ingénierie informatique et systèmes embarqués"
+            title="Trayectoria Académica"
+            subtitle="Mi camino hacia la experiencia en ingeniería informática y sistemas embebidos"
           />
 
           <div className="relative">
@@ -94,7 +94,7 @@ const EducationSection = () => {
                                 <span>{item.period}</span>
                                 {item.status === 'current' && (
                                   <span className="ml-2 px-2 py-1 bg-[#C5A880]/10 text-[#C5A880] rounded-full text-xs">
-                                    En cours
+                                    En curso
                                   </span>
                                 )}
                               </div>
@@ -110,7 +110,7 @@ const EducationSection = () => {
                         <div className="space-y-3">
                           <h4 className="font-semibold text-foreground flex items-center space-x-2">
                             <Award className="w-4 h-4 text-[#C5A880]" />
-                            <span>Points clés</span>
+                            <span>Puntos clave</span>
                           </h4>
                           <ul className="space-y-2">
                             {item.achievements.map((achievement, achievementIndex) => (
@@ -135,10 +135,10 @@ const EducationSection = () => {
           {/* Stats Section */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: 'Années d\'études', value: '6+' },
+              { label: 'Años de estudio', value: '6+' },
               { label: 'Institutions', value: '3' },
-              { label: 'Langues Maîtrisées', value: '3' },
-              { label: 'Projets Réalisés', value: '20+' },
+              { label: 'Idiomas Dominados', value: '3' },
+              { label: 'Proyectos Realizados', value: '20+' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-playfair font-bold text-[#0A192F] mb-2">

@@ -35,8 +35,8 @@ const ContactSection = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message envoyé !",
-        description: "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
+        title: "¡Mensaje enviado!",
+        description: "Gracias por tu mensaje. Te responderé a la brevedad.",
       });
       setFormData({
         nom: '',
@@ -57,14 +57,14 @@ const ContactSection = () => {
     },
     {
       icon: Phone,
-      label: 'Téléphone',
+      label: 'Teléfono',
       value: '+52 614 397 7741',
       href: 'tel:+526143977741'
     },
     {
       icon: MapPin,
-      label: 'Localisation',
-      value: 'Chihuahua, Mexique',
+      label: 'Ubicación',
+      value: 'Chihuahua, México',
       href: '#'
     }
   ];
@@ -95,8 +95,8 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Contactez-moi"
-            subtitle="N'hésitez pas à me contacter pour discuter d'opportunités de collaboration ou de projets innovants"
+            title="Contáctame"
+            subtitle="No dudes en contactarme para discutir oportunidades de colaboración o proyectos innovadores"
           />
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -105,57 +105,57 @@ const ContactSection = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl font-playfair">
-                    Envoyez-moi un message
+                    Envíame un mensaje
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="nom">Nom complet *</Label>
+                        <Label htmlFor="nom">Nombre completo *</Label>
                         <Input
                           id="nom"
                           name="nom"
                           value={formData.nom}
                           onChange={handleInputChange}
-                          placeholder="Votre nom complet"
+                          placeholder="Tu nombre completo"
                           required
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Adresse email *</Label>
+                        <Label htmlFor="email">Dirección de email *</Label>
                         <Input
                           id="email"
                           name="email"
                           type="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          placeholder="votre.email@example.com"
+                          placeholder="tu.email@ejemplo.com"
                           required
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="sujet">Sujet *</Label>
+                      <Label htmlFor="sujet">Asunto *</Label>
                       <Input
                         id="sujet"
                         name="sujet"
                         value={formData.sujet}
                         onChange={handleInputChange}
-                        placeholder="L'objet de votre message"
+                        placeholder="El asunto de tu mensaje"
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
+                      <Label htmlFor="message">Mensaje *</Label>
                       <Textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Votre message détaillé..."
+                        placeholder="Tu mensaje detallado..."
                         rows={6}
                         required
                       />
@@ -168,11 +168,11 @@ const ContactSection = () => {
                       className="w-full group"
                     >
                       {isLoading ? (
-                        <span>Envoi en cours...</span>
+                        <span>Enviando...</span>
                       ) : (
                         <>
                           <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                          Envoyer le message
+                          Enviar mensaje
                         </>
                       )}
                     </Button>
@@ -186,7 +186,7 @@ const ContactSection = () => {
               {/* Contact Details */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Informations de contact</CardTitle>
+                  <CardTitle>Información de contacto</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {contactInfo.map((item, index) => (
@@ -211,7 +211,7 @@ const ContactSection = () => {
               {/* Social Links */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Plateformes professionnelles</CardTitle>
+                  <CardTitle>Plataformas profesionales</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex space-x-4">
@@ -229,8 +229,8 @@ const ContactSection = () => {
                     ))}
                   </div>
                   <p className="text-sm text-muted-foreground mt-4">
-                    Connectons-nous pour échanger sur nos intérêts technologiques 
-                    et explorer des opportunités de collaboration.
+                    Conectemos para intercambiar ideas sobre nuestros intereses tecnológicos 
+                    y explorar oportunidades de colaboración.
                   </p>
                 </CardContent>
               </Card>
@@ -239,15 +239,15 @@ const ContactSection = () => {
               <Card className="bg-gradient-to-r from-[#0A192F]/5 to-[#C5A880]/5">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">
-                    Disponibilité
+                    Disponibilidad
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Je suis actuellement disponible pour des projets de développement, 
-                    des collaborations techniques, et des discussions sur l'innovation 
-                    technologique.
+                    Actualmente estoy disponible para proyectos de desarrollo, 
+                    colaboraciones técnicas y discusiones sobre innovación 
+                    tecnológica.
                   </p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    <strong>Fuseau horaire :</strong> CST (UTC-6)
+                    <strong>Zona horaria:</strong> CST (UTC-6)
                   </p>
                 </CardContent>
               </Card>

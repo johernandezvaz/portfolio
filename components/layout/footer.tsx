@@ -15,7 +15,7 @@ const Footer = () => {
               José de Jesús Hernández Vázquez
             </h3>
             <p className="text-sm text-muted-foreground">
-              Ingénieur en systèmes informatiques passionné par l'innovation technologique
+              Ingeniero en sistemas informáticos apasionado por la innovación tecnológica
             </p>
           </div>
 
@@ -56,9 +56,9 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center space-x-1">
-            <span>© {currentYear} José de Jesús Hernández Vázquez. Créé avec</span>
+            <span>© {currentYear} José de Jesús Hernández Vázquez. Creado con</span>
             <Heart className="w-4 h-4 text-red-500" />
-            <span>pour l'innovation technologique</span>
+            <span>para la innovación tecnológica</span>
           </p>
         </div>
       </div>
