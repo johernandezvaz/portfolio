@@ -1,14 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
-import SectionTitle from '@/components/ui/section-title';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +12,11 @@ const ContactSection = () => {
     message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+
+  // Configuración de EmailJS - Reemplaza con tus credenciales
+  const EMAILJS_SERVICE_ID = 'service_dlnqh42'
+  const EMAILJS_TEMPLATE_ID = 'template_g1hnfsj'
+  const EMAILJS_PUBLIC_KEY = 'Q-_MQuQwXVq6AgeBy'
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -32,20 +30,39 @@ const ContactSection = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "¡Mensaje enviado!",
-        description: "Gracias por tu mensaje. Te responderé a la brevedad.",
-      });
+    try {
+      // Enviar email usando EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.nom,
+          from_email: formData.email,
+          subject: formData.sujet,
+          message: formData.message,
+          to_name: 'José Hernández', // Tu nombre
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      console.log('Email enviado exitosamente:', result.text);
+      
+      // Mostrar mensaje de éxito
+      alert('¡Mensaje enviado exitosamente! Te responderé a la brevedad.');
+      
+      // Limpiar formulario
       setFormData({
         nom: '',
         email: '',
         sujet: '',
         message: ''
       });
+    } catch (error) {
+      console.error('Error al enviar email:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctame directamente por email.');
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -94,78 +111,90 @@ const ContactSection = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle
-            title="Contáctame"
-            subtitle="No dudes en contactarme para discutir oportunidades de colaboración o proyectos innovadores"
-          />
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Contáctame</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              No dudes en contactarme para discutir oportunidades de colaboración o proyectos innovadores
+            </p>
+          </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl font-playfair">
-                    Envíame un mensaje
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Envíame un mensaje
+                </h3>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="nom">Nombre completo *</Label>
-                        <Input
+                        <label htmlFor="nom" className="block text-sm font-medium text-gray-700">
+                          Nombre completo *
+                        </label>
+                        <input
                           id="nom"
                           name="nom"
+                          type="text"
                           value={formData.nom}
                           onChange={handleInputChange}
                           placeholder="Tu nombre completo"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           required
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Dirección de email *</Label>
-                        <Input
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                          Dirección de email *
+                        </label>
+                        <input
                           id="email"
                           name="email"
                           type="email"
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="tu.email@ejemplo.com"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           required
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="sujet">Asunto *</Label>
-                      <Input
+                      <label htmlFor="sujet" className="block text-sm font-medium text-gray-700">
+                        Asunto *
+                      </label>
+                      <input
                         id="sujet"
                         name="sujet"
+                        type="text"
                         value={formData.sujet}
                         onChange={handleInputChange}
                         placeholder="El asunto de tu mensaje"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Mensaje *</Label>
-                      <Textarea
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                        Mensaje *
+                      </label>
+                      <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
                         placeholder="Tu mensaje detallado..."
                         rows={6}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
-                      />
+                      ></textarea>
                     </div>
 
-                    <Button
+                    <button
                       type="submit"
-                      size="lg"
                       disabled={isLoading}
-                      className="w-full group"
+                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center group"
                     >
                       {isLoading ? (
                         <span>Enviando...</span>
@@ -175,45 +204,39 @@ const ContactSection = () => {
                           Enviar mensaje
                         </>
                       )}
-                    </Button>
+                    </button>
                   </form>
-                </CardContent>
-              </Card>
+              </div>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-6">
               {/* Contact Details */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Información de contacto</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Información de contacto</h3>
+                <div className="space-y-4">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                         <item.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">{item.label}</p>
+                        <p className="font-medium text-gray-900">{item.label}</p>
                         <a
                           href={item.href}
-                          className="text-sm text-muted-foreground hover:text-[#C5A880] transition-colors"
+                          className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                         >
                           {item.value}
                         </a>
                       </div>
                     </div>
                   ))}
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
               {/* Social Links */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Plataformas profesionales</CardTitle>
-                </CardHeader>
-                <CardContent>
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Plataformas profesionales</h3>
                   <div className="flex space-x-4">
                     {socialLinks.map((link, index) => (
                       <a
@@ -221,36 +244,33 @@ const ContactSection = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-12 h-12 bg-muted rounded-lg flex items-center justify-center hover:shadow-lg transition-all duration-300 ${link.color}`}
+                        className={`w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:shadow-lg transition-all duration-300 ${link.color}`}
                       >
                         <link.icon className="w-5 h-5" />
                         <span className="sr-only">{link.label}</span>
                       </a>
                     ))}
                   </div>
-                  <p className="text-sm text-muted-foreground mt-4">
+                  <p className="text-sm text-gray-600 mt-4">
                     Conectemos para intercambiar ideas sobre nuestros intereses tecnológicos 
                     y explorar oportunidades de colaboración.
                   </p>
-                </CardContent>
-              </Card>
+              </div>
 
               {/* Availability */}
-              <Card className="bg-gradient-to-r from-[#0A192F]/5 to-[#C5A880]/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-3">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-lg p-6">
+                  <h3 className="font-semibold text-gray-900 mb-3">
                     Disponibilidad
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Actualmente estoy disponible para proyectos de desarrollo, 
                     colaboraciones técnicas y discusiones sobre innovación 
                     tecnológica.
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">
+                  <p className="text-sm text-gray-600 mt-2">
                     <strong>Zona horaria:</strong> CST (UTC-6)
                   </p>
-                </CardContent>
-              </Card>
+              </div>
             </div>
           </div>
         </div>

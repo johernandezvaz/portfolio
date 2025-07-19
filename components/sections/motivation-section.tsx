@@ -65,7 +65,7 @@ const MotivationSection = () => {
                   </p>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    Mis proyectos, como <strong>KleinNotes</strong> (plataforma médica con IA) 
+                    Mis proyectos, como <strong>SigmundFiles</strong> (plataforma médica con IA) 
                     y <strong>Lumier</strong> (sistema de detección inteligente), ilustran mi 
                     capacidad para transformar ideas innovadoras en soluciones concretas. Creo 
                     firmemente que la tecnología debe ser accesible, sostenible y al servicio de 

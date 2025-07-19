@@ -15,7 +15,7 @@ const ProjectsSection = () => {
   image: "/sapphirus-logo.png",
   technologies: ["Next.js", "TailwindCSS", "Stripe", "Supabase"],
   category: "E-commerce",
-  period: "Abril 2024 - Junio 2024",
+  period: "Enero 2025 - Marzo 2025",
   highlights: [
     "Pasarela de pagos segura con Stripe",
     "Gestión de productos y usuarios con Supabase",
@@ -31,7 +31,7 @@ const ProjectsSection = () => {
   image: "/fajas-maydel-logo.png",
   technologies: ["Next.js", "TailwindCSS", "Stripe", "Supabase"],
   category: "E-commerce",
-  period: "Marzo 2024 - Mayo 2024",
+  period: "Junio 2025 - Julio 2025",
   highlights: [
     "Diseño moderno enfocado en conversión",
     "Catálogo dinámico gestionado con Supabase",
@@ -42,10 +42,10 @@ const ProjectsSection = () => {
   }
 },
     {
-      title: "KleinNotes - Plataforma de Gestión Médica",
+      title: "SigmundFiles - Plataforma de Gestión Médica",
       description: "Plataforma innovadora de gestión de expedientes médicos enfocada en psicología, utilizando inteligencia artificial para digitalizar notas clínicas y analizar patrones lingüísticos.",
-      image: "/klein-notes.jpg",
-      technologies: ["Python", "Tesseract", "Django", "SQLite", "NLP"],
+      image: "https://images.pexels.com/photos/5912319/pexels-photo-5912319.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["Python", "TensorFlow", "Django", "PostgreSQL", "NLP"],
       category: "Inteligencia Artificial",
       period: "Junio 2024 - Presente",
       highlights: [
@@ -54,14 +54,15 @@ const ProjectsSection = () => {
         "Mejora en la precisión diagnóstica"
       ],
       links: {
-        github: "https://github.com/maikuamx/kleinnotes"
+        demo: "https://www.kaggle.com/maikua/code",
+        github: "https://github.com/johernandezvaz"
       }
     },
     {
       title: "Lumier - Sistema de Detección Inteligente",
       description: "Sistema innovador de detección de presencia humana mediante procesamiento de imágenes, optimizando el consumo energético encendiendo y apagando luces solo cuando es necesario.",
       image: "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Python", "OpenCV", "ESP32", "IoT", "Computer Vision"],
+      technologies: ["Python", "OpenCV", "Raspberry Pi", "IoT", "Computer Vision"],
       category: "IoT y Sistemas Embebidos",
       period: "Enero 2024 - Mayo 2024",
       highlights: [
@@ -70,14 +71,15 @@ const ProjectsSection = () => {
         "Aplicaciones extensibles a sistemas de climatización"
       ],
       links: {
-
+        demo: "#",
+        github: "https://github.com/johernandezvaz"
       }
     },
     {
       title: "Plataforma Web para Despacho Contable",
       description: "Sitio web completo para una empresa de contabilidad que permite simplificar el acceso de los clientes a la información y facilitar la comunicación con la empresa.",
       image: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["HTML", "CSS", "JavaScript"],
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       category: "Desarrollo Web",
       period: "Febrero 2023 - Agosto 2023",
       highlights: [
@@ -86,14 +88,15 @@ const ProjectsSection = () => {
         "Comunicación optimizada empresa-cliente"
       ],
       links: {
-        demo: "https://pvacontadores.com.mx/",
+        demo: "#",
+        github: "https://github.com/johernandezvaz"
       }
     },
     {
       title: "Sitio Web para Laboratorio de Ensayos Mecánicos",
       description: "Plataforma web para un laboratorio de ensayos mecánicos que mejora el acceso de los clientes a la información y simplifica la comunicación para solicitudes de información.",
       image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["NEXTJS", "TailwindCSS", "TypeScript"],
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       category: "Desarrollo Web",
       period: "Agosto 2021 - Agosto 2022",
       highlights: [
@@ -102,7 +105,8 @@ const ProjectsSection = () => {
         "Mejora en la comunicación con clientes"
       ],
       links: {
-        demo: "https://www.asecalab.com.mx/",
+        demo: "#",
+        github: "https://github.com/johernandezvaz"
       }
     }
   ];
@@ -180,12 +184,14 @@ const ProjectsSection = () => {
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <ExternalLink className="w-4 h-4" />
+                        <span>Voir</span>
                         <span>Ver</span>
                       </a>
                     </Button>
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <Github className="w-4 h-4" />
+                        <span>Code</span>
                         <span>Código</span>
                       </a>
                     </Button>
