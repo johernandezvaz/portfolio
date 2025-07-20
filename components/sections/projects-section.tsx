@@ -42,9 +42,9 @@ const ProjectsSection = () => {
   }
 },
     {
-      title: "SigmundFiles - Plataforma de Gestión Médica",
+      title: "KleinNotes - Plataforma de Gestión Médica",
       description: "Plataforma innovadora de gestión de expedientes médicos enfocada en psicología, utilizando inteligencia artificial para digitalizar notas clínicas y analizar patrones lingüísticos.",
-      image: "https://images.pexels.com/photos/5912319/pexels-photo-5912319.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/klein-notes.jpg",
       technologies: ["Python", "TensorFlow", "Django", "PostgreSQL", "NLP"],
       category: "Inteligencia Artificial",
       period: "Junio 2024 - Presente",
@@ -54,8 +54,7 @@ const ProjectsSection = () => {
         "Mejora en la precisión diagnóstica"
       ],
       links: {
-        demo: "https://www.kaggle.com/maikua/code",
-        github: "https://github.com/johernandezvaz"
+        github: "https://github.com/maikuamx/kleinnotes"
       }
     },
     {
@@ -71,8 +70,7 @@ const ProjectsSection = () => {
         "Aplicaciones extensibles a sistemas de climatización"
       ],
       links: {
-        demo: "#",
-        github: "https://github.com/johernandezvaz"
+
       }
     },
     {
@@ -88,8 +86,7 @@ const ProjectsSection = () => {
         "Comunicación optimizada empresa-cliente"
       ],
       links: {
-        demo: "#",
-        github: "https://github.com/johernandezvaz"
+        demo: "https://pvacontadores.com.mx/",
       }
     },
     {
@@ -105,8 +102,7 @@ const ProjectsSection = () => {
         "Mejora en la comunicación con clientes"
       ],
       links: {
-        demo: "#",
-        github: "https://github.com/johernandezvaz"
+        demo: "https://www.asecalab.com.mx/",
       }
     }
   ];
@@ -184,14 +180,12 @@ const ProjectsSection = () => {
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <ExternalLink className="w-4 h-4" />
-                        <span>Voir</span>
                         <span>Ver</span>
                       </a>
                     </Button>
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <Github className="w-4 h-4" />
-                        <span>Code</span>
                         <span>Código</span>
                       </a>
                     </Button>

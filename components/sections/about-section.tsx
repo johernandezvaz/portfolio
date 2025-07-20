@@ -50,7 +50,7 @@ const AboutSection = () => {
 
                 <p className="text-muted-foreground leading-relaxed">
                   Dominando el <strong>español</strong> (lengua materna), el <strong>francés</strong> (B2) 
-                  y el <strong>inglés</strong> (B2), me intereso particularmente en el desarrollo web 
+                  y el <strong>inglés</strong> (C1), me intereso particularmente en el desarrollo web 
                   y móvil, IoT, sistemas embebidos e inteligencia artificial. Mi curiosidad 
                   me impulsa a explorar nuevas tecnologías y crear aplicaciones innovadoras.
                 </p>

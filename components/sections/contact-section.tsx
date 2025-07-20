@@ -194,7 +194,7 @@ const ContactSection = () => {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center group"
+                      className="w-full bg-gradient-to-br from-[#0A192F] to-[#C5A880] text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center group"
                     >
                       {isLoading ? (
                         <span>Enviando...</span>
@@ -217,7 +217,7 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-lg flex items-center justify-center">
                         <item.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
