@@ -128,7 +128,7 @@ const Header = () => {
                   className="text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
-                  <span>{t.nav.downloadCV}</span>
+                </button>
               ))}
               <Button
                 variant="outline"
@@ -142,7 +142,7 @@ const Header = () => {
                 }}
               >
                 <Download className="w-4 h-4" />
-                <span>Descargar CV</span>
+                <span>{t.nav.downloadCV}</span>
               </Button>
             </div>
           </nav>
