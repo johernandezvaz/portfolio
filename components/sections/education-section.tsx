@@ -3,46 +3,37 @@
 import { GraduationCap, Award, Calendar, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import SectionTitle from '@/components/ui/section-title';
+import { useLanguage } from '@/hooks/use-language';
 
 const EducationSection = () => {
+  const { t } = useLanguage();
+  
   const education = [
     {
-      degree: "Ingeniería en sistemas informáticos",
-      institution: "Instituto Tecnológico Nacional de México Campus Chihuahua II (ITCHII)",
+      degree: t.education.degrees.engineering.degree,
+      institution: t.education.degrees.engineering.institution,
       location: "Chihuahua, México",
       period: "Enero 2022 - Julio 2026 (previsto)",
-      description: "Formación completa en ingeniería informática con especialización en sistemas embebidos e IoT.",
-      achievements: [
-        "Especialización en sistemas embebidos",
-        "Proyectos innovadores en IoT",
-        "Formación en inteligencia artificial"
-      ],
+      description: t.education.degrees.engineering.description,
+      achievements: t.education.degrees.engineering.achievements,
       status: "current"
     },
     {
-      degree: "Licencia Profesional SARII",
-      institution: "IUT Saint-Dié-des-Vosges",
+      degree: t.education.degrees.license.degree,
+      institution: t.education.degrees.license.institution,
       location: "Francia",
       period: "Septiembre 2020 - Junio 2021",
-      description: "Formación especializada en sistemas automatizados, redes e informática industrial.",
-      achievements: [
-        "Experiencia en sistemas automatizados",
-        "Dominio de redes industriales",
-        "Perfeccionamiento del francés"
-      ],
+      description: t.education.degrees.license.description,
+      achievements: t.education.degrees.license.achievements,
       status: "completed"
     },
     {
-      degree: "TSU Mecatrónica",
-      institution: "Universidad Tecnológica de Chihuahua (UTCH)",
+      degree: t.education.degrees.tsu.degree,
+      institution: t.education.degrees.tsu.institution,
       location: "Chihuahua, México",
       period: "Septiembre 2018 - Agosto 2020",
-      description: "Formación técnica en mecatrónica, combinando mecánica, electrónica e informática.",
-      achievements: [
-        "Bases sólidas en mecatrónica",
-        "Programación de sistemas embebidos",
-        "Integración de sensores y actuadores"
-      ],
+      description: t.education.degrees.tsu.description,
+      achievements: t.education.degrees.tsu.achievements,
       status: "completed"
     }
   ];
@@ -52,8 +43,8 @@ const EducationSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Trayectoria Académica"
-            subtitle="Mi camino hacia la experiencia en ingeniería informática y sistemas embebidos"
+            title={t.education.title}
+            subtitle={t.education.subtitle}
           />
 
           <div className="relative">
@@ -94,7 +85,7 @@ const EducationSection = () => {
                                 <span>{item.period}</span>
                                 {item.status === 'current' && (
                                   <span className="ml-2 px-2 py-1 bg-[#C5A880]/10 text-[#C5A880] rounded-full text-xs">
-                                    En curso
+                                    {t.education.current}
                                   </span>
                                 )}
                               </div>
@@ -110,7 +101,7 @@ const EducationSection = () => {
                         <div className="space-y-3">
                           <h4 className="font-semibold text-foreground flex items-center space-x-2">
                             <Award className="w-4 h-4 text-[#C5A880]" />
-                            <span>Puntos clave</span>
+                            <span>{t.education.keyPoints}</span>
                           </h4>
                           <ul className="space-y-2">
                             {item.achievements.map((achievement, achievementIndex) => (
@@ -135,10 +126,10 @@ const EducationSection = () => {
           {/* Stats Section */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: 'Años de estudio', value: '6+' },
-              { label: 'Institutions', value: '3' },
-              { label: 'Idiomas Dominados', value: '3' },
-              { label: 'Proyectos Realizados', value: '20+' },
+              { label: t.education.stats.yearsOfStudy, value: '6+' },
+              { label: t.education.stats.institutions, value: '3' },
+              { label: t.education.stats.languagesMastered, value: '3' },
+              { label: t.education.stats.projectsCompleted, value: '20+' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-playfair font-bold text-primary mb-2">

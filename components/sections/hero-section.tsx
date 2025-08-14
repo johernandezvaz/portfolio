@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 import { ChevronDown, Download, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { useLanguage } from '@/hooks/use-language';
 
 const HeroSection = () => {
   const [mounted, setMounted] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -34,23 +36,22 @@ const HeroSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4" />
-                  <span>Estudiante Internacional - México</span>
+                  <span>{t.hero.location}</span>
                 </div>
                 
                 <h1 className="text-4xl md:text-6xl font-playfair font-bold leading-tight">
-                  Hola, soy
+                  {t.hero.greeting}
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#C5A880]">
-                    José de Jesús Hernández Vázquez
+                    {t.hero.name}
                   </span>
                 </h1>
 
                 <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                  Ingeniero en sistemas informáticos especializado en IoT y desarrollo web, 
-                  apasionado por la innovación tecnológica y la inteligencia artificial.
+                  {t.hero.description}
                 </p>
 
                 <p className="text-lg text-muted-foreground italic">
-                  &quot;La tecnología al servicio de la innovación y el progreso humano.&quot;
+                  {t.hero.quote}
                 </p>
               </div>
 
@@ -66,10 +67,10 @@ const HeroSection = () => {
                   }}
                 >
                   <Download className="w-4 h-4 mr-2 group-hover:animate-pulse" />
-                  Descargar mi CV
+                  {t.hero.downloadCV}
                 </Button>
                 <Button variant="outline" size="lg" onClick={scrollToNext}>
-                  Descubrir mi trayectoria
+                  {t.hero.discoverJourney}
                   <ChevronDown className="w-4 h-4 ml-2" />
                 </Button>
               </div>

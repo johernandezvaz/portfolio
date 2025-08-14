@@ -3,8 +3,11 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { useLanguage } from '@/hooks/use-language';
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+  
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
@@ -48,7 +51,7 @@ const ContactSection = () => {
       console.log('Email enviado exitosamente:', result.text);
       
       // Mostrar mensaje de éxito
-      alert('¡Mensaje enviado exitosamente! Te responderé a la brevedad.');
+      alert(t.contact.successMessage);
       
       // Limpiar formulario
       setFormData({
@@ -59,7 +62,7 @@ const ContactSection = () => {
       });
     } catch (error) {
       console.error('Error al enviar email:', error);
-      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctame directamente por email.');
+      alert(t.contact.errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -68,19 +71,19 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
+      label: t.contact.labels.email,
       value: 'johernandezvaz@gmail.com',
       href: 'mailto:johernandezvaz@gmail.com'
     },
     {
       icon: Phone,
-      label: 'Teléfono',
+      label: t.contact.labels.phone,
       value: '+52 614 397 7741',
       href: 'tel:+526143977741'
     },
     {
       icon: MapPin,
-      label: 'Ubicación',
+      label: t.contact.labels.location,
       value: 'Chihuahua, México',
       href: '#'
     }
@@ -112,9 +115,9 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Contáctame</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.contact.title}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              No dudes en contactarme para discutir oportunidades de colaboración o proyectos innovadores
+              {t.contact.subtitle}
             </p>
           </div>
 
@@ -123,13 +126,13 @@ const ContactSection = () => {
             <div className="lg:col-span-2">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Envíame un mensaje
+                  {t.contact.sendMessage}
                 </h3>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label htmlFor="nom" className="block text-sm font-medium text-gray-700">
-                          Nombre completo *
+                          {t.contact.fullName} *
                         </label>
                         <input
                           id="nom"
@@ -137,14 +140,14 @@ const ContactSection = () => {
                           type="text"
                           value={formData.nom}
                           onChange={handleInputChange}
-                          placeholder="Tu nombre completo"
+                          placeholder={t.contact.placeholders.fullName}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           required
                         />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                          Dirección de email *
+                          {t.contact.email} *
                         </label>
                         <input
                           id="email"
@@ -152,7 +155,7 @@ const ContactSection = () => {
                           type="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          placeholder="tu.email@ejemplo.com"
+                          placeholder={t.contact.placeholders.email}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           required
                         />
@@ -161,7 +164,7 @@ const ContactSection = () => {
 
                     <div className="space-y-2">
                       <label htmlFor="sujet" className="block text-sm font-medium text-gray-700">
-                        Asunto *
+                        {t.contact.subject} *
                       </label>
                       <input
                         id="sujet"
@@ -169,7 +172,7 @@ const ContactSection = () => {
                         type="text"
                         value={formData.sujet}
                         onChange={handleInputChange}
-                        placeholder="El asunto de tu mensaje"
+                        placeholder={t.contact.placeholders.subject}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
                       />
@@ -177,14 +180,14 @@ const ContactSection = () => {
 
                     <div className="space-y-2">
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                        Mensaje *
+                        {t.contact.message} *
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Tu mensaje detallado..."
+                        placeholder={t.contact.placeholders.message}
                         rows={6}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
@@ -197,11 +200,11 @@ const ContactSection = () => {
                       className="w-full bg-gradient-to-br from-[#0A192F] to-[#C5A880] text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center group"
                     >
                       {isLoading ? (
-                        <span>Enviando...</span>
+                        <span>{t.contact.sending}</span>
                       ) : (
                         <>
                           <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                          Enviar mensaje
+                          {t.contact.send}
                         </>
                       )}
                     </button>
@@ -213,7 +216,7 @@ const ContactSection = () => {
             <div className="space-y-6">
               {/* Contact Details */}
               <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Información de contacto</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{t.contact.contactInfo}</h3>
                 <div className="space-y-4">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
@@ -236,7 +239,7 @@ const ContactSection = () => {
 
               {/* Social Links */}
               <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Plataformas profesionales</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{t.contact.professionalPlatforms}</h3>
                   <div className="flex space-x-4">
                     {socialLinks.map((link, index) => (
                       <a
@@ -252,23 +255,20 @@ const ContactSection = () => {
                     ))}
                   </div>
                   <p className="text-sm text-gray-600 mt-4">
-                    Conectemos para intercambiar ideas sobre nuestros intereses tecnológicos 
-                    y explorar oportunidades de colaboración.
+                    {t.contact.connectText}
                   </p>
               </div>
 
               {/* Availability */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-lg p-6">
                   <h3 className="font-semibold text-gray-900 mb-3">
-                    Disponibilidad
+                    {t.contact.availability}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Actualmente estoy disponible para proyectos de desarrollo, 
-                    colaboraciones técnicas y discusiones sobre innovación 
-                    tecnológica.
+                    {t.contact.availabilityText}
                   </p>
                   <p className="text-sm text-gray-600 mt-2">
-                    <strong>Zona horaria:</strong> CST (UTC-6)
+                    <strong>{t.contact.timezone}</strong>
                   </p>
               </div>
             </div>

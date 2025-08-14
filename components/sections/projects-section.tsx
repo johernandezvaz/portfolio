@@ -6,101 +6,80 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import SectionTitle from '@/components/ui/section-title';
 import Image from 'next/image';
+import { useLanguage } from '@/hooks/use-language';
 
 const ProjectsSection = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
-  title: "Sapphirus - Tienda de Ropa Americana",
-  description: "E-commerce moderno enfocado en la venta de ropa americana importada, con una experiencia de usuario optimizada para móviles y pagos seguros mediante Stripe.",
+  title: t.projects.list.sapphirus.title,
+  description: t.projects.list.sapphirus.description,
   image: "/sapphirus-logo.png",
   technologies: ["Next.js", "TailwindCSS", "Stripe", "Supabase"],
-  category: "E-commerce",
+  category: t.projects.categories.ecommerce,
   period: "Enero 2025 - Marzo 2025",
-  highlights: [
-    "Pasarela de pagos segura con Stripe",
-    "Gestión de productos y usuarios con Supabase",
-    "Interfaz responsiva y centrada en UX"
-  ],
+  highlights: t.projects.list.sapphirus.highlights,
   links: {
     demo: "https://sapphirus.com.mx/",
   }
 },
 {
-  title: "Fajas Colombianas Maydel",
-  description: "Tienda en línea especializada en la venta de fajas colombianas, con enfoque en conversión, velocidad y facilidad de navegación desde dispositivos móviles.",
+  title: t.projects.list.fajas.title,
+  description: t.projects.list.fajas.description,
   image: "/fajas-maydel-logo.png",
   technologies: ["Next.js", "TailwindCSS", "Stripe", "Supabase"],
-  category: "E-commerce",
+  category: t.projects.categories.ecommerce,
   period: "Junio 2025 - Julio 2025",
-  highlights: [
-    "Diseño moderno enfocado en conversión",
-    "Catálogo dinámico gestionado con Supabase",
-    "Integración fluida con Stripe para pagos"
-  ],
+  highlights: t.projects.list.fajas.highlights,
   links: {
     demo: "https://fajascolombianasmaydel.com.mx/",
   }
 },
     {
-      title: "KleinNotes - Plataforma de Gestión Médica",
-      description: "Plataforma innovadora de gestión de expedientes médicos enfocada en psicología, utilizando inteligencia artificial para digitalizar notas clínicas y analizar patrones lingüísticos.",
+      title: t.projects.list.kleinnotes.title,
+      description: t.projects.list.kleinnotes.description,
       image: "/klein-notes.jpg",
       technologies: ["Python", "TensorFlow", "Django", "PostgreSQL", "NLP"],
-      category: "Inteligencia Artificial",
+      category: t.projects.categories.ai,
       period: "Junio 2024 - Presente",
-      highlights: [
-        "IA para análisis de notas clínicas",
-        "Interfaz intuitiva para psicólogos",
-        "Mejora en la precisión diagnóstica"
-      ],
+      highlights: t.projects.list.kleinnotes.highlights,
       links: {
         github: "https://github.com/maikuamx/kleinnotes"
       }
     },
     {
-      title: "Lumier - Sistema de Detección Inteligente",
-      description: "Sistema innovador de detección de presencia humana mediante procesamiento de imágenes, optimizando el consumo energético encendiendo y apagando luces solo cuando es necesario.",
+      title: t.projects.list.lumier.title,
+      description: t.projects.list.lumier.description,
       image: "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["Python", "OpenCV", "Raspberry Pi", "IoT", "Computer Vision"],
-      category: "IoT y Sistemas Embebidos",
+      category: t.projects.categories.iot,
       period: "Enero 2024 - Mayo 2024",
-      highlights: [
-        "Reducción significativa del consumo energético",
-        "Detección en tiempo real por visión computacional",
-        "Aplicaciones extensibles a sistemas de climatización"
-      ],
+      highlights: t.projects.list.lumier.highlights,
       links: {
 
       }
     },
     {
-      title: "Plataforma Web para Despacho Contable",
-      description: "Sitio web completo para una empresa de contabilidad que permite simplificar el acceso de los clientes a la información y facilitar la comunicación con la empresa.",
+      title: t.projects.list.accounting.title,
+      description: t.projects.list.accounting.description,
       image: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      category: "Desarrollo Web",
+      category: t.projects.categories.web,
       period: "Febrero 2023 - Agosto 2023",
-      highlights: [
-        "Interfaz de cliente amigable",
-        "Gestión segura de datos",
-        "Comunicación optimizada empresa-cliente"
-      ],
+      highlights: t.projects.list.accounting.highlights,
       links: {
         demo: "https://pvacontadores.com.mx/",
       }
     },
     {
-      title: "Sitio Web para Laboratorio de Ensayos Mecánicos",
-      description: "Plataforma web para un laboratorio de ensayos mecánicos que mejora el acceso de los clientes a la información y simplifica la comunicación para solicitudes de información.",
+      title: t.projects.list.laboratory.title,
+      description: t.projects.list.laboratory.description,
       image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-      category: "Desarrollo Web",
+      category: t.projects.categories.web,
       period: "Agosto 2021 - Agosto 2022",
-      highlights: [
-        "Interfaz responsiva y moderna",
-        "Sistema de solicitudes en línea",
-        "Mejora en la comunicación con clientes"
-      ],
+      highlights: t.projects.list.laboratory.highlights,
       links: {
         demo: "https://www.asecalab.com.mx/",
       }
@@ -112,8 +91,8 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Mis Proyectos"
-            subtitle="Descubre mis logros técnicos y mis contribuciones a la innovación"
+            title={t.projects.title}
+            subtitle={t.projects.subtitle}
           />
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -150,7 +129,7 @@ const ProjectsSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-2 flex items-center space-x-2">
                       <Tag className="w-4 h-4 text-[#C5A880]" />
-                      <span>Puntos clave</span>
+                      <span>{t.projects.keyPoints}</span>
                     </h4>
                     <ul className="space-y-1">
                       {project.highlights.map((highlight, highlightIndex) => (
@@ -166,7 +145,7 @@ const ProjectsSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Tecnologías utilizadas</h4>
+                    <h4 className="font-semibold text-foreground mb-3">{t.projects.technologiesUsed}</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="outline" className="text-xs">
@@ -180,13 +159,13 @@ const ProjectsSection = () => {
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <ExternalLink className="w-4 h-4" />
-                        <span>Ver</span>
+                        <span>{t.projects.viewDemo}</span>
                       </a>
                     </Button>
                     <Button size="sm" variant="outline" asChild>
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                         <Github className="w-4 h-4" />
-                        <span>Código</span>
+                        <span>{t.projects.viewCode}</span>
                       </a>
                     </Button>
                   </div>
@@ -197,7 +176,7 @@ const ProjectsSection = () => {
 
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-6">
-              Descubre más proyectos en mis plataformas de desarrollo
+              {t.projects.moreProjects}
             </p>
             <div className="flex justify-center space-x-4">
               <Button variant="outline" asChild>
