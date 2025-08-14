@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X, Download } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
+import { LanguageSelector } from '@/components/ui/language-selector';
+import { useLanguage } from '@/hooks/use-language';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { t } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -30,13 +33,13 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'inicio', label: 'Inicio' },
-    { id: 'acerca-de', label: 'Acerca de' },
-    { id: 'trayectoria', label: 'Trayectoria' },
-    { id: 'proyectos', label: 'Proyectos' },
-    { id: 'habilidades', label: 'Habilidades' },
-    { id: 'objetivo', label: 'Objetivo' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'inicio', label: t.nav.home },
+    { id: 'acerca-de', label: t.nav.about },
+    { id: 'trayectoria', label: t.nav.education },
+    { id: 'proyectos', label: t.nav.projects },
+    { id: 'habilidades', label: t.nav.skills },
+    { id: 'objetivo', label: t.nav.objectives },
+    { id: 'contact', label: t.nav.contact },
   ];
 
   if (!mounted) return null;
@@ -69,6 +72,8 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
+            <LanguageSelector />
+            
             <Button
               variant="outline"
               size="sm"
@@ -81,7 +86,7 @@ const Header = () => {
               }}
             >
               <Download className="w-4 h-4" />
-              <span>CV</span>
+              <span>{t.nav.downloadCV}</span>
             </Button>
 
             <Button
@@ -137,7 +142,7 @@ const Header = () => {
                 }}
               >
                 <Download className="w-4 h-4" />
-                <span>Descargar CV</span>
+                <span>{t.nav.downloadCV}</span>
               </Button>
             </div>
           </nav>

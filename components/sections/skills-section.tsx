@@ -5,12 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import SectionTitle from '@/components/ui/section-title';
+import { useLanguage } from '@/hooks/use-language';
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+  
   const languages = [
-    { name: 'Español', level: 100, description: 'Lengua materna' },
-    { name: 'Francés', level: 85, description: 'Nivel B2 - Uso profesional' },
-    { name: 'Inglés', level: 90, description: 'Nivel C1 - Comunicación fluida' },
+    { name: t.skills.languages.spanish, level: 100, description: t.skills.languages.descriptions.spanish },
+    { name: t.skills.languages.french, level: 85, description: t.skills.languages.descriptions.french },
+    { name: t.skills.languages.english, level: 90, description: t.skills.languages.descriptions.english },
   ];
 
   const technicalSkills = [
@@ -35,10 +38,10 @@ const SkillsSection = () => {
   ];
 
   const methodologies = [
-    { name: 'Desarrollo IoT', description: 'Prototipado de sistemas embebidos, integración de sensores y actuadores' },
-    { name: 'Gestión de Proyectos', description: 'Metodologías ágiles, planificación y coordinación de equipos' },
-    { name: 'Optimización y Rendimiento', description: 'Mejora del rendimiento del sistema y optimización de código' },
-    { name: 'Inteligencia Artificial', description: 'Machine Learning, Deep Learning y análisis de datos' },
+    { name: t.skills.methodologies.list.iot.name, description: t.skills.methodologies.list.iot.description },
+    { name: t.skills.methodologies.list.projectManagement.name, description: t.skills.methodologies.list.projectManagement.description },
+    { name: t.skills.methodologies.list.optimization.name, description: t.skills.methodologies.list.optimization.description },
+    { name: t.skills.methodologies.list.ai.name, description: t.skills.methodologies.list.ai.description },
   ];
 
   return (
@@ -46,8 +49,8 @@ const SkillsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Mis Habilidades"
-            subtitle="Una visión completa de mis capacidades lingüísticas, técnicas y metodológicas"
+            title={t.skills.title}
+            subtitle={t.skills.subtitle}
           />
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -56,7 +59,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Languages className="w-5 h-5 text-[#C5A880]" />
-                  <span>Idiomas</span>
+                  <span>{t.skills.languages.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -78,7 +81,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Code className="w-5 h-5 text-[#C5A880]" />
-                  <span>Habilidades Técnicas</span>
+                  <span>{t.skills.technical.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -106,7 +109,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Settings className="w-5 h-5 text-[#C5A880]" />
-                  <span>Herramientas y Tecnologías</span>
+                  <span>{t.skills.tools.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -125,7 +128,7 @@ const SkillsSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-[#C5A880]" />
-                  <span>Metodologías</span>
+                  <span>{t.skills.methodologies.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -145,10 +148,10 @@ const SkillsSection = () => {
           <div className="mt-12 bg-gradient-to-r from-[#0A192F]/5 to-[#C5A880]/5 rounded-2xl p-8">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               {[
-                { icon: Languages, label: 'Idiomas Dominados', value: '3' },
-                { icon: Code, label: 'Tecnologías', value: '15+' },
-                { icon: Settings, label: 'Herramientas Profesionales', value: '15+' },
-                { icon: TrendingUp, label: 'Años de Experiencia', value: '4+' },
+                { icon: Languages, label: t.skills.stats.languagesMastered, value: '3' },
+                { icon: Code, label: t.skills.stats.technologies, value: '15+' },
+                { icon: Settings, label: t.skills.stats.professionalTools, value: '15+' },
+                { icon: TrendingUp, label: t.skills.stats.yearsExperience, value: '4+' },
               ].map((stat, index) => (
                 <div key={index} className="space-y-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-lg flex items-center justify-center mx-auto">

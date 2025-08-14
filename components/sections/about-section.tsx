@@ -3,28 +3,31 @@
 import { Globe, BookOpen, Users, Target } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import SectionTitle from '@/components/ui/section-title';
+import { useLanguage } from '@/hooks/use-language';
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+  
   const highlights = [
     {
       icon: Globe,
-      title: 'Experiencia Internacional',
-      description: 'Experiencia multicultural con dominio del español, francés e inglés',
+      title: t.about.highlights.international.title,
+      description: t.about.highlights.international.description,
     },
     {
       icon: BookOpen,
-      title: 'Formación Técnica',
-      description: 'Ingeniería en sistemas informáticos con especialización en sistemas embebidos',
+      title: t.about.highlights.technical.title,
+      description: t.about.highlights.technical.description,
     },
     {
       icon: Users,
-      title: 'Experiencia Profesional',
-      description: 'Desarrollador Full Stack con experiencia en tecnologías web modernas',
+      title: t.about.highlights.professional.title,
+      description: t.about.highlights.professional.description,
     },
     {
       icon: Target,
-      title: 'Innovación IoT',
-      description: 'Apasionado por el Internet de las Cosas y la inteligencia artificial',
+      title: t.about.highlights.innovation.title,
+      description: t.about.highlights.innovation.description,
     },
   ];
 
@@ -33,8 +36,8 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle
-            title="Acerca de mí"
-            subtitle="Descubre mi perfil, mis habilidades y mis aspiraciones tecnológicas"
+            title={t.about.title}
+            subtitle={t.about.subtitle}
           />
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -42,28 +45,20 @@ const AboutSection = () => {
             <div className="space-y-6">
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed">
-                  Originario de <strong>México</strong>, soy un ingeniero en sistemas informáticos 
-                  apasionado por el desarrollo web, móvil y el Internet de las Cosas (IoT). Mi trayectoria 
-                  me ha permitido desarrollar una sólida experiencia en tecnologías modernas y un enfoque 
-                  innovador hacia los desafíos tecnológicos contemporáneos.
+                  {t.about.paragraph1}
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  Dominando el <strong>español</strong> (lengua materna), el <strong>francés</strong> (B2) 
-                  y el <strong>inglés</strong> (C1), me intereso particularmente en el desarrollo web 
-                  y móvil, IoT, sistemas embebidos e inteligencia artificial. Mi curiosidad 
-                  me impulsa a explorar nuevas tecnologías y crear aplicaciones innovadoras.
+                  {t.about.paragraph2}
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  Mi objetivo es contribuir a proyectos que empujen los límites de la tecnología, 
-                  combinando mis habilidades técnicas con una visión creativa para desarrollar 
-                  soluciones que tengan un impacto positivo en la sociedad.
+                  {t.about.paragraph3}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {['IoT', 'Desarrollo Web', 'Inteligencia Artificial', 'Innovación'].map((tag) => (
+                {t.about.tags.map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1 bg-[#C5A880]/10 text-[#C5A880] rounded-full text-sm font-medium"
@@ -99,11 +94,10 @@ const AboutSection = () => {
           {/* Quote Section */}
           <div className="mt-16 text-center">
             <blockquote className="text-2xl md:text-3xl font-playfair italic text-muted-foreground max-w-4xl mx-auto">
-              &quot;Creo firmemente que la tecnología debe servir a la humanidad y que la innovación 
-              nace de la curiosidad y la perseverancia.&quot;
+              {t.about.quote}
             </blockquote>
             <cite className="block mt-4 text-sm font-medium text-[#C5A880]">
-              - José de Jesús Hernández Vázquez
+              {t.about.quoteAuthor}
             </cite>
           </div>
         </div>

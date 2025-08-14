@@ -2,8 +2,10 @@
 
 import { Github, Mail, Heart, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/hooks/use-language';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -15,7 +17,7 @@ const Footer = () => {
               José de Jesús Hernández Vázquez
             </h3>
             <p className="text-sm text-muted-foreground">
-              Ingeniero en sistemas informáticos apasionado por la innovación tecnológica
+              {t.footer.description}
             </p>
           </div>
 
@@ -56,9 +58,9 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center space-x-1">
-            <span>© {currentYear} José de Jesús Hernández Vázquez. Creado con</span>
+            <span>© {currentYear} José de Jesús Hernández Vázquez. {t.footer.createdWith}</span>
             <Heart className="w-4 h-4 text-red-500" />
-            <span>para la innovación tecnológica</span>
+            <span>{t.footer.forInnovation}</span>
           </p>
         </div>
       </div>
