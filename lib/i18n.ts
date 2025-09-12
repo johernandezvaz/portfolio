@@ -93,6 +93,8 @@ export interface Translation {
   projects: {
     title: string;
     subtitle: string;
+    researchTitle: string;
+    researchSubtitle: string;
     viewDemo: string;
     viewCode: string;
     moreProjects: string;
@@ -131,6 +133,13 @@ export interface Translation {
         highlights: string[];
       };
       laboratory: {
+        title: string;
+        description: string;
+        highlights: string[];
+      };
+    };
+    research: {
+      cimav: {
         title: string;
         description: string;
         highlights: string[];
