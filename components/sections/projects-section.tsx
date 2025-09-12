@@ -69,12 +69,14 @@ const ProjectsSection = () => {
             category: t.projects.categories.iot,
             period: "Enero 2024 - Mayo 2024",
             highlights: t.projects.list.lumier.highlights,
-            links: {},
+            links: {
+                github: "",
+            },
         },
         {
             title: t.projects.list.accounting.title,
             description: t.projects.list.accounting.description,
-            image: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
+            image: "/Logo-1.png",
             technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
             category: t.projects.categories.web,
             period: "Febrero 2023 - Agosto 2023",
@@ -86,8 +88,8 @@ const ProjectsSection = () => {
         {
             title: t.projects.list.laboratory.title,
             description: t.projects.list.laboratory.description,
-            image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
-            technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+            image: "/ASE-CA LAB-02.png",
+            technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
             category: t.projects.categories.web,
             period: "Agosto 2021 - Agosto 2022",
             highlights: t.projects.list.laboratory.highlights,
@@ -195,6 +197,12 @@ const ProjectsSection = () => {
                             {otherProjects.map((project, index) => (
                                 <Card key={index} className="group hover:shadow-xl transition-all duration-500 overflow-hidden">
                                     <div className="relative h-48 overflow-hidden">
+                                        <Image
+                                            src={project.image || "/placeholder.svg"}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                         <div className="absolute bottom-4 left-4 right-4">
                                             <Badge variant="secondary" className="mb-2">
