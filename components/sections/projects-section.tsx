@@ -105,12 +105,8 @@ const ProjectsSection = () => {
 
                     <div className="mb-16">
                         <div className="text-center mb-8">
-                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">
-                                {t.projects.featuredProject || "Proyecto Destacado"}
-                            </h3>
-                            <p className="text-muted-foreground">
-                                {t.projects.institutionalCollaboration || "Colaboración Institucional"}
-                            </p>
+                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.researchTitle}</h3>
+                            <p className="text-muted-foreground">{t.projects.researchSubtitle}</p>
                         </div>
 
                         <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden ring-2 ring-[#C5A880] shadow-xl bg-gradient-to-br from-background to-muted/20">
@@ -191,12 +187,8 @@ const ProjectsSection = () => {
 
                     <div>
                         <div className="text-center mb-8">
-                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">
-                                {t.projects.otherProjects || "Otros Proyectos"}
-                            </h3>
-                            <p className="text-muted-foreground">
-                                {t.projects.portfolioDescription || "Portafolio de desarrollo web y aplicaciones"}
-                            </p>
+                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.moreProjects}</h3>
+                            <p className="text-muted-foreground">{t.projects.subtitle}</p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
