@@ -95,6 +95,8 @@ export interface Translation {
         subtitle: string;
         researchTitle: string;
         researchSubtitle: string;
+        inProgressTitle: string;
+        inProgressSubtitle: string;
         viewDemo: string;
         viewCode: string;
         moreProjects: string;
@@ -105,6 +107,9 @@ export interface Translation {
             ai: string;
             iot: string;
             web: string;
+            research: string;
+            fullstack: string;
+            mobile: string;
         };
         list: {
             sapphirus: {
@@ -142,6 +147,29 @@ export interface Translation {
             cimav: {
                 title: string;
                 description: string;
+                highlights: string[];
+            };
+        };
+        inProgress: {
+            portfolio: {
+                title: string;
+                description: string;
+                status: string;
+                progress: number;
+                highlights: string[];
+            };
+            iot: {
+                title: string;
+                description: string;
+                status: string;
+                progress: number;
+                highlights: string[];
+            };
+            ai: {
+                title: string;
+                description: string;
+                status: string;
+                progress: number;
                 highlights: string[];
             };
         };
@@ -379,6 +407,10 @@ export const translations: Record<Language, Translation> = {
         projects: {
             title: 'Mis Proyectos',
             subtitle: 'Descubre mis logros técnicos y mis contribuciones a la innovación',
+            researchTitle: "Diseño y desarrollo de una arquitectura RAG",
+            researchSubtitle: "Proyecto de Licenciatura",
+            inProgressTitle: 'Proyectos en Progreso',
+            inProgressSubtitle: 'Proyectos actuales en desarrollo y tecnologías que estoy explorando',
             viewDemo: 'Ver',
             viewCode: 'Código',
             moreProjects: 'Descubre más proyectos en mis plataformas de desarrollo',
@@ -389,6 +421,9 @@ export const translations: Record<Language, Translation> = {
                 ai: 'Inteligencia Artificial',
                 iot: 'IoT y Sistemas Embebidos',
                 web: 'Desarrollo Web',
+                research: 'Investigación',
+                fullstack: 'Full Stack',
+                mobile: 'Aplicación Móvil',
             },
             list: {
                 sapphirus: {
@@ -446,8 +481,6 @@ export const translations: Record<Language, Translation> = {
                     ],
                 },
             },
-            researchTitle: "Diseño y desarrollo de una arquitectura RAG",
-            researchSubtitle: "Proyecto de Licenciatura",
             research: {
                 cimav: {
                     title: "Arquitectura RAG para el centro de investigación en materiales avanzados",
@@ -457,6 +490,44 @@ export const translations: Record<Language, Translation> = {
                         'Uso de FAISS para poder controlar el manejo del procesamiento de lenguaje natural',
                         'Uso de GROBID',
                         'Mejora de la actual plataforma que permite hacer busqueda de estas tesis',
+                    ]
+                }
+            },
+            inProgress: {
+                portfolio: {
+                    title: 'Portafolio Personal v2.0',
+                    description: 'Rediseño completo de mi portafolio personal con nuevas funcionalidades, animaciones avanzadas y mejor experiencia de usuario.',
+                    status: 'En desarrollo activo',
+                    progress: 75,
+                    highlights: [
+                        'Diseño responsivo mejorado',
+                        'Animaciones con Framer Motion',
+                        'Sistema de blog integrado',
+                        'Panel de administración'
+                    ]
+                },
+                iot: {
+                    title: 'Sistema de Monitoreo Ambiental IoT',
+                    description: 'Plataforma completa para monitoreo de variables ambientales usando sensores ESP32 y dashboard en tiempo real.',
+                    status: 'Prototipo funcional',
+                    progress: 60,
+                    highlights: [
+                        'Sensores ESP32 con MicroPython',
+                        'Dashboard en tiempo real con React',
+                        'Base de datos InfluxDB para series temporales',
+                        'Alertas automáticas por WhatsApp'
+                    ]
+                },
+                ai: {
+                    title: 'Asistente IA para Análisis de Datos',
+                    description: 'Herramienta de inteligencia artificial que automatiza el análisis exploratorio de datos y genera insights automáticamente.',
+                    status: 'Investigación y desarrollo',
+                    progress: 40,
+                    highlights: [
+                        'Procesamiento automático de datasets',
+                        'Generación inteligente de visualizaciones',
+                        'Reportes automáticos con insights',
+                        'Integración con múltiples fuentes de datos'
                     ]
                 }
             }
@@ -684,6 +755,10 @@ export const translations: Record<Language, Translation> = {
         projects: {
             title: 'My Projects',
             subtitle: 'Discover my technical achievements and my contributions to innovation',
+            researchTitle: "Design and Development of a RAG Architecture",
+            researchSubtitle: "Bachelor's Project",
+            inProgressTitle: 'Projects in Progress',
+            inProgressSubtitle: 'Current projects in development and technologies I am exploring',
             viewDemo: 'View',
             viewCode: 'Code',
             moreProjects: 'Discover more projects on my development platforms',
@@ -694,6 +769,9 @@ export const translations: Record<Language, Translation> = {
                 ai: 'Artificial Intelligence',
                 iot: 'IoT and Embedded Systems',
                 web: 'Web Development',
+                research: 'Research',
+                fullstack: 'Full Stack',
+                mobile: 'Mobile App',
             },
             list: {
                 sapphirus: {
@@ -751,8 +829,6 @@ export const translations: Record<Language, Translation> = {
                     ],
                 },
             },
-            researchTitle: "Design and Development of a RAG Architecture",
-            researchSubtitle: "Bachelor’s Project",
             research: {
                 cimav: {
                     title: "RAG Architecture for the Advanced Materials Research Center",
@@ -762,6 +838,44 @@ export const translations: Record<Language, Translation> = {
                         "Use of FAISS to manage natural language processing",
                         "Use of GROBID",
                         "Improvement of the current platform that allows searching through these theses",
+                    ]
+                }
+            },
+            inProgress: {
+                portfolio: {
+                    title: 'Personal Portfolio v2.0',
+                    description: 'Complete redesign of my personal portfolio with new functionalities, advanced animations, and better user experience.',
+                    status: 'In active development',
+                    progress: 75,
+                    highlights: [
+                        'Improved responsive design',
+                        'Animations with Framer Motion',
+                        'Integrated blog system',
+                        'Administration dashboard'
+                    ]
+                },
+                iot: {
+                    title: 'IoT Environmental Monitoring System',
+                    description: 'Complete platform for monitoring environmental variables using ESP32 sensors and real-time dashboard.',
+                    status: 'Functional prototype',
+                    progress: 60,
+                    highlights: [
+                        'ESP32 sensors with MicroPython',
+                        'Real-time dashboard with React',
+                        'InfluxDB database for time series',
+                        'Automatic WhatsApp alerts'
+                    ]
+                },
+                ai: {
+                    title: 'AI Assistant for Data Analysis',
+                    description: 'Artificial intelligence tool that automates exploratory data analysis and automatically generates insights.',
+                    status: 'Research and development',
+                    progress: 40,
+                    highlights: [
+                        'Automatic dataset processing',
+                        'Intelligent visualization generation',
+                        'Automatic reports with insights',
+                        'Integration with multiple data sources'
                     ]
                 }
             }
@@ -989,6 +1103,10 @@ export const translations: Record<Language, Translation> = {
         projects: {
             title: 'Mes Projets',
             subtitle: 'Découvrez mes réalisations techniques et mes contributions à l\'innovation',
+            researchTitle: "Conception et développement d'une architecture RAG",
+            researchSubtitle: "Projet de Licence",
+            inProgressTitle: 'Projets en Cours',
+            inProgressSubtitle: 'Projets actuels en développement et technologies que j\'explore',
             viewDemo: 'Voir',
             viewCode: 'Code',
             moreProjects: 'Découvrez plus de projets sur mes plateformes de développement',
@@ -999,6 +1117,9 @@ export const translations: Record<Language, Translation> = {
                 ai: 'Intelligence Artificielle',
                 iot: 'IoT et Systèmes Embarqués',
                 web: 'Développement Web',
+                research: 'Recherche',
+                fullstack: 'Full Stack',
+                mobile: 'Application Mobile',
             },
             list: {
                 sapphirus: {
@@ -1056,8 +1177,6 @@ export const translations: Record<Language, Translation> = {
                     ],
                 },
             },
-            researchTitle: "Conception et développement d’une architecture RAG",
-            researchSubtitle: "Projet de Licence",
             research: {
                 cimav: {
                     title: "Architecture RAG pour le Centre de Recherche en Matériaux Avancés",
@@ -1067,6 +1186,44 @@ export const translations: Record<Language, Translation> = {
                         "Utilisation de FAISS pour gérer le traitement du langage naturel",
                         "Utilisation de GROBID",
                         "Amélioration de la plateforme actuelle permettant la recherche dans ces thèses",
+                    ]
+                }
+            },
+            inProgress: {
+                portfolio: {
+                    title: 'Portfolio Personnel v2.0',
+                    description: 'Refonte complète de mon portfolio personnel avec de nouvelles fonctionnalités, des animations avancées et une meilleure expérience utilisateur.',
+                    status: 'En développement actif',
+                    progress: 75,
+                    highlights: [
+                        'Design responsive amélioré',
+                        'Animations avec Framer Motion',
+                        'Système de blog intégré',
+                        'Tableau de bord d\'administration'
+                    ]
+                },
+                iot: {
+                    title: 'Système de Surveillance Environnementale IoT',
+                    description: 'Plateforme complète pour surveiller les variables environnementales en utilisant des capteurs ESP32 et un tableau de bord en temps réel.',
+                    status: 'Prototype fonctionnel',
+                    progress: 60,
+                    highlights: [
+                        'Capteurs ESP32 avec MicroPython',
+                        'Tableau de bord en temps réel avec React',
+                        'Base de données InfluxDB pour les séries temporelles',
+                        'Alertes automatiques WhatsApp'
+                    ]
+                },
+                ai: {
+                    title: 'Assistant IA pour l\'Analyse de Données',
+                    description: 'Outil d\'intelligence artificielle qui automatise l\'analyse exploratoire des données et génère automatiquement des insights.',
+                    status: 'Recherche et développement',
+                    progress: 40,
+                    highlights: [
+                        'Traitement automatique des jeux de données',
+                        'Génération intelligente de visualisations',
+                        'Rapports automatiques avec insights',
+                        'Intégration avec plusieurs sources de données'
                     ]
                 }
             }
