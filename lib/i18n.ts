@@ -409,7 +409,7 @@ export const translations: Record<Language, Translation> = {
             subtitle: 'Descubre mis logros técnicos y mis contribuciones a la innovación',
             researchTitle: "Diseño y desarrollo de una arquitectura RAG",
             researchSubtitle: "Proyecto de Licenciatura",
-            inProgressTitle: 'Proyectos en Progreso',
+            inProgressTitle: 'Proyectos en Curso',
             inProgressSubtitle: 'Proyectos actuales en desarrollo y tecnologías que estoy explorando',
             viewDemo: 'Ver',
             viewCode: 'Código',
@@ -495,8 +495,8 @@ export const translations: Record<Language, Translation> = {
             },
             inProgress: {
                 portfolio: {
-                    title: 'Portafolio Personal v2.0',
-                    description: 'Rediseño completo de mi portafolio personal con nuevas funcionalidades, animaciones avanzadas y mejor experiencia de usuario.',
+                    title: 'Portfolio Personal v2.0',
+                    description: 'Refonte completa de mi portfolio personal con nuevas funcionalidades, animaciones avanzadas y mejor experiencia de usuario.',
                     status: 'En desarrollo activo',
                     progress: 75,
                     highlights: [
@@ -507,8 +507,8 @@ export const translations: Record<Language, Translation> = {
                     ]
                 },
                 iot: {
-                    title: 'Sistema de Monitoreo Ambiental IoT',
-                    description: 'Plataforma completa para monitoreo de variables ambientales usando sensores ESP32 y dashboard en tiempo real.',
+                    title: 'Sistema IoT de Monitoreo Ambiental',
+                    description: 'Plataforma completa para monitorear variables ambientales con sensores ESP32 y dashboard en tiempo real.',
                     status: 'Prototipo funcional',
                     progress: 60,
                     highlights: [
@@ -525,7 +525,7 @@ export const translations: Record<Language, Translation> = {
                     progress: 40,
                     highlights: [
                         'Procesamiento automático de datasets',
-                        'Generación inteligente de visualizaciones',
+                        'Generación de visualizaciones inteligentes',
                         'Reportes automáticos con insights',
                         'Integración con múltiples fuentes de datos'
                     ]
@@ -771,7 +771,7 @@ export const translations: Record<Language, Translation> = {
                 web: 'Web Development',
                 research: 'Research',
                 fullstack: 'Full Stack',
-                mobile: 'Mobile App',
+                mobile: 'Mobile Application',
             },
             list: {
                 sapphirus: {
@@ -844,7 +844,7 @@ export const translations: Record<Language, Translation> = {
             inProgress: {
                 portfolio: {
                     title: 'Personal Portfolio v2.0',
-                    description: 'Complete redesign of my personal portfolio with new functionalities, advanced animations, and better user experience.',
+                    description: 'Complete redesign of my personal portfolio with new features, advanced animations and better user experience.',
                     status: 'In active development',
                     progress: 75,
                     highlights: [
@@ -856,7 +856,7 @@ export const translations: Record<Language, Translation> = {
                 },
                 iot: {
                     title: 'IoT Environmental Monitoring System',
-                    description: 'Complete platform for monitoring environmental variables using ESP32 sensors and real-time dashboard.',
+                    description: 'Complete platform to monitor environmental variables with ESP32 sensors and real-time dashboard.',
                     status: 'Functional prototype',
                     progress: 60,
                     highlights: [
@@ -1192,7 +1192,7 @@ export const translations: Record<Language, Translation> = {
             inProgress: {
                 portfolio: {
                     title: 'Portfolio Personnel v2.0',
-                    description: 'Refonte complète de mon portfolio personnel avec de nouvelles fonctionnalités, des animations avancées et une meilleure expérience utilisateur.',
+                    description: 'Refonte complète de mon portfolio personnel avec de nouvelles fonctionnalités, animations avancées et meilleure expérience utilisateur.',
                     status: 'En développement actif',
                     progress: 75,
                     highlights: [
@@ -1203,27 +1203,27 @@ export const translations: Record<Language, Translation> = {
                     ]
                 },
                 iot: {
-                    title: 'Système de Surveillance Environnementale IoT',
-                    description: 'Plateforme complète pour surveiller les variables environnementales en utilisant des capteurs ESP32 et un tableau de bord en temps réel.',
+                    title: 'Système IoT de Surveillance Environnementale',
+                    description: 'Plateforme complète pour surveiller les variables environnementales avec capteurs ESP32 et tableau de bord en temps réel.',
                     status: 'Prototype fonctionnel',
                     progress: 60,
                     highlights: [
                         'Capteurs ESP32 avec MicroPython',
-                        'Tableau de bord en temps réel avec React',
-                        'Base de données InfluxDB pour les séries temporelles',
-                        'Alertes automatiques WhatsApp'
+                        'Tableau de bord temps réel avec React',
+                        'Base de données InfluxDB pour séries temporelles',
+                        'Alertes automatiques par WhatsApp'
                     ]
                 },
                 ai: {
-                    title: 'Assistant IA pour l\'Analyse de Données',
-                    description: 'Outil d\'intelligence artificielle qui automatise l\'analyse exploratoire des données et génère automatiquement des insights.',
+                    title: 'Assistant IA pour Analyse de Données',
+                    description: 'Outil d\'intelligence artificielle qui automatise l\'analyse exploratoire de données et génère automatiquement des insights.',
                     status: 'Recherche et développement',
                     progress: 40,
                     highlights: [
-                        'Traitement automatique des jeux de données',
-                        'Génération intelligente de visualisations',
+                        'Traitement automatique des datasets',
+                        'Génération de visualisations intelligentes',
                         'Rapports automatiques avec insights',
-                        'Intégration avec plusieurs sources de données'
+                        'Intégration avec sources de données multiples'
                     ]
                 }
             }

@@ -105,92 +105,172 @@ const ProjectsSection = () => {
                 <div className="max-w-6xl mx-auto">
                     <SectionTitle title={t.projects.title} subtitle={t.projects.subtitle} />
 
-                    <div className="mb-16">
+                    {/* Research Projects Section */}
+                    <div className="mb-12">
                         <div className="text-center mb-8">
                             <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.researchTitle}</h3>
                             <p className="text-muted-foreground">{t.projects.researchSubtitle}</p>
                         </div>
 
-                        <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden ring-2 ring-[#C5A880] shadow-xl bg-gradient-to-br from-background to-muted/20">
-                            <div className="relative h-64 overflow-hidden">
-                                <div className="absolute top-4 right-4 z-10">
-                                    <Badge className="bg-[#C5A880] text-white flex items-center gap-1 text-sm px-3 py-1">
-                                        <Award className="w-4 h-4" />
-                                        Proyecto Institucional
-                                    </Badge>
-                                </div>
-                                <Image
-                                    src={cimavProject.image || "/placeholder.svg"}
-                                    alt={cimavProject.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <Badge variant="secondary" className="mb-3 text-sm">
-                                        {cimavProject.category}
-                                    </Badge>
-                                    <h3 className="text-3xl font-playfair font-bold text-white text-shadow-lg">{cimavProject.title}</h3>
-                                </div>
-                            </div>
-
-                            <CardContent className="p-8 space-y-6">
-                                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                                    <Calendar className="w-4 h-4" />
-                                    <span>{cimavProject.period}</span>
-                                </div>
-
-                                <p className="text-muted-foreground leading-relaxed text-lg">{cimavProject.description}</p>
-
-                                <div>
-                                    <h4 className="font-semibold text-foreground mb-3 flex items-center space-x-2">
-                                        <Tag className="w-4 h-4 text-[#C5A880]" />
-                                        <span>{t.projects.keyPoints}</span>
-                                    </h4>
-                                    <ul className="space-y-2">
-                                        {cimavProject.highlights.map((highlight, highlightIndex) => (
-                                            <li key={highlightIndex} className="flex items-start space-x-3 text-muted-foreground">
-                                                <div className="w-2 h-2 bg-[#C5A880] rounded-full mt-2 flex-shrink-0"></div>
-                                                <span>{highlight}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <h4 className="font-semibold text-foreground mb-4">{t.projects.technologiesUsed}</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                        {cimavProject.technologies.map((tech, techIndex) => (
-                                            <Badge key={techIndex} variant="outline" className="text-sm px-3 py-1">
-                                                {tech}
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {researchProjects.map((project, index) => (
+                                <Card key={index} className="group hover:shadow-xl transition-all duration-500 overflow-hidden">
+                                    <div className="relative h-48 overflow-hidden">
+                                        <div className="absolute top-4 right-4 z-10">
+                                            <Badge className="bg-[#C5A880] text-white flex items-center gap-1 text-sm px-2 py-1">
+                                                <Award className="w-3 h-3" />
+                                                {t.projects.categories.research}
                                             </Badge>
-                                        ))}
+                                        </div>
+                                        <Image
+                                            src={project.image || "/placeholder.svg"}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <Badge variant="secondary" className="mb-2">
+                                                {project.category}
+                                            </Badge>
+                                            <h3 className="text-xl font-playfair font-bold text-white">{project.title}</h3>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="flex space-x-4 pt-6">
-                                    {cimavProject.links.github && (
-                                        <Button size="lg" variant="default" asChild className="bg-[#C5A880] hover:bg-[#B8975C]">
-                                            <a
-                                                href={cimavProject.links.github}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center space-x-2"
-                                            >
-                                                <Github className="w-5 h-5" />
-                                                <span>{t.projects.viewCode}</span>
-                                            </a>
-                                        </Button>
-                                    )}
-                                </div>
-                            </CardContent>
-                        </Card>
+                                    <CardContent className="p-6 space-y-4">
+                                        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                                            <Calendar className="w-4 h-4" />
+                                            <span>{project.period}</span>
+                                        </div>
+
+                                        <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-2 flex items-center space-x-2">
+                                                <Tag className="w-4 h-4 text-[#C5A880]" />
+                                                <span>{t.projects.keyPoints}</span>
+                                            </h4>
+                                            <ul className="space-y-1">
+                                                {project.highlights.map((highlight, highlightIndex) => (
+                                                    <li key={highlightIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                                                        <div className="w-1.5 h-1.5 bg-[#C5A880] rounded-full mt-2 flex-shrink-0"></div>
+                                                        <span>{highlight}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-3">{t.projects.technologiesUsed}</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.technologies.map((tech, techIndex) => (
+                                                    <Badge key={techIndex} variant="outline" className="text-xs">
+                                                        {tech}
+                                                    </Badge>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div className="flex space-x-3 pt-4">
+                                            {project.links.github && (
+                                                <Button size="sm" variant="outline" asChild>
+                                                    <a
+                                                        href={project.links.github}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center space-x-2"
+                                                    >
+                                                        <Github className="w-4 h-4" />
+                                                        <span>{t.projects.viewCode}</span>
+                                                    </a>
+                                                </Button>
+                                            )}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
                     </div>
 
+                    {/* Projects in Progress Section */}
+                    <div className="mb-12">
+                        <div className="text-center mb-8">
+                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.inProgressTitle}</h3>
+                            <p className="text-muted-foreground">{t.projects.inProgressSubtitle}</p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {inProgressProjects.map((project, index) => (
+                                <Card key={index} className="group hover:shadow-xl transition-all duration-500 overflow-hidden border-dashed border-[#C5A880]/50">
+                                    <div className="relative h-40 overflow-hidden">
+                                        <div className="absolute top-3 right-3 z-10">
+                                            <Badge className="bg-orange-500 text-white flex items-center gap-1 text-xs px-2 py-1">
+                                                <Clock className="w-3 h-3" />
+                                                {project.progress}%
+                                            </Badge>
+                                        </div>
+                                        <Image
+                                            src={project.image || "/placeholder.svg"}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                        <div className="absolute bottom-3 left-3 right-3">
+                                            <Badge variant="secondary" className="mb-1 text-xs">
+                                                {project.category}
+                                            </Badge>
+                                            <h3 className="text-lg font-playfair font-bold text-white">{project.title}</h3>
+                                        </div>
+                                    </div>
+
+                                    <CardContent className="p-5 space-y-4">
+                                        <div className="space-y-2">
+                                            <div className="flex items-center justify-between text-sm">
+                                                <span className="text-muted-foreground">{project.status}</span>
+                                                <span className="font-medium text-foreground">{project.progress}%</span>
+                                            </div>
+                                            <Progress value={project.progress} className="h-2" />
+                                        </div>
+
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-2 flex items-center space-x-2">
+                                                <TrendingUp className="w-3 h-3 text-[#C5A880]" />
+                                                <span className="text-sm">{t.projects.keyPoints}</span>
+                                            </h4>
+                                            <ul className="space-y-1">
+                                                {project.highlights.map((highlight, highlightIndex) => (
+                                                    <li key={highlightIndex} className="flex items-start space-x-2 text-xs text-muted-foreground">
+                                                        <div className="w-1 h-1 bg-orange-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                                                        <span>{highlight}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-2 text-sm">{t.projects.technologiesUsed}</h4>
+                                            <div className="flex flex-wrap gap-1">
+                                                {project.technologies.map((tech, techIndex) => (
+                                                    <Badge key={techIndex} variant="outline" className="text-xs px-2 py-0.5">
+                                                        {tech}
+                                                    </Badge>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Completed Projects Section */}
                     <div>
                         <div className="text-center mb-8">
                             <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.moreProjects}</h3>
-                            <p className="text-muted-foreground">{t.projects.subtitle}</p>
+                            <p className="text-muted-foreground">Proyectos completados y en producción</p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
