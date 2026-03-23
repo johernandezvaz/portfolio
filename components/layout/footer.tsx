@@ -59,7 +59,6 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center space-x-1">
             <span>© {currentYear} José de Jesús Hernández Vázquez. {t.footer.createdWith}</span>
-            <Heart className="w-4 h-4 text-red-500" />
             <span>{t.footer.forInnovation}</span>
           </p>
         </div>

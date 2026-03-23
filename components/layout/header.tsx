@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X, Download } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { LanguageSelector } from '@/components/ui/language-selector';
@@ -13,6 +13,22 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
   const { t } = useLanguage();
   const [mounted, setMounted] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     setMounted(true);
@@ -46,17 +62,15 @@ const Header = () => {
 
   return (
     <header
+      ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-sm border-b border-border shadow-sm'
+        isScrolled || isMobileMenuOpen
+          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg'
           : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-playfair font-bold text-primary">
-            Portfolio
-          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -73,21 +87,8 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <LanguageSelector />
-            
-            <Button
-              variant="outline"
-              size="sm"
-              className="hidden md:flex items-center space-x-2"
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/cv_es_johernandez.pdf';
-                link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
-                link.click();
-              }}
-            >
-              <Download className="w-4 h-4" />
-              <span>{t.nav.downloadCV}</span>
-            </Button>
+
+
 
             <Button
               variant="ghost"
@@ -130,20 +131,7 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-fit flex items-center space-x-2"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/cv_es_johernandez.pdf';
-                  link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
-                  link.click();
-                }}
-              >
-                <Download className="w-4 h-4" />
-                <span>{t.nav.downloadCV}</span>
-              </Button>
+
             </div>
           </nav>
         )}

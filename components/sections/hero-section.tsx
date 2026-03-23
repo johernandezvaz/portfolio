@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ChevronDown, Download, MapPin } from 'lucide-react';
+import { ChevronDown, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
@@ -56,20 +56,8 @@ const HeroSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  size="lg" 
-                  className="group"
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = '/cv_es_johernandez.pdf';
-                    link.download = 'CV_Jose_Hernandez_Vazquez.pdf';
-                    link.click();
-                  }}
-                >
-                  <Download className="w-4 h-4 mr-2 group-hover:animate-pulse" />
-                  {t.hero.downloadCV}
-                </Button>
-                <Button variant="outline" size="lg" onClick={scrollToNext}>
+
+                <Button size="lg" onClick={scrollToNext}>
                   {t.hero.discoverJourney}
                   <ChevronDown className="w-4 h-4 ml-2" />
                 </Button>

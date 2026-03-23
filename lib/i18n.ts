@@ -95,8 +95,8 @@ export interface Translation {
         subtitle: string;
         researchTitle: string;
         researchSubtitle: string;
-        inProgressTitle: string;
-        inProgressSubtitle: string;
+        examplesTitle: string;
+        examplesSubtitle: string;
         viewDemo: string;
         viewCode: string;
         moreProjects: string;
@@ -409,8 +409,8 @@ export const translations: Record<Language, Translation> = {
             subtitle: 'Descubre mis logros técnicos y mis contribuciones a la innovación',
             researchTitle: "Diseño y desarrollo de una arquitectura RAG",
             researchSubtitle: "Proyecto de Licenciatura",
-            inProgressTitle: 'Proyectos en Curso',
-            inProgressSubtitle: 'Proyectos actuales en desarrollo y tecnologías que estoy explorando',
+            examplesTitle: 'Ejemplos de Sitios Web',
+            examplesSubtitle: 'Propuestas y diseños de referencia construidos con Next.js y TailwindCSS',
             viewDemo: 'Ver',
             viewCode: 'Código',
             moreProjects: 'Descubre más proyectos en mis plataformas de desarrollo',
@@ -655,7 +655,7 @@ export const translations: Record<Language, Translation> = {
         },
         footer: {
             description: 'Ingeniero en sistemas informáticos apasionado por la innovación tecnológica',
-            createdWith: 'Creado con',
+            createdWith: 'Creado',
             forInnovation: 'para la innovación tecnológica',
         },
     },
@@ -757,8 +757,8 @@ export const translations: Record<Language, Translation> = {
             subtitle: 'Discover my technical achievements and my contributions to innovation',
             researchTitle: "Design and Development of a RAG Architecture",
             researchSubtitle: "Bachelor's Project",
-            inProgressTitle: 'Projects in Progress',
-            inProgressSubtitle: 'Current projects in development and technologies I am exploring',
+            examplesTitle: 'Website Examples',
+            examplesSubtitle: 'Proposals and reference designs built with Next.js and TailwindCSS',
             viewDemo: 'View',
             viewCode: 'Code',
             moreProjects: 'Discover more projects on my development platforms',
@@ -1003,7 +1003,7 @@ export const translations: Record<Language, Translation> = {
         },
         footer: {
             description: 'Computer systems engineer passionate about technological innovation',
-            createdWith: 'Created with',
+            createdWith: 'Created',
             forInnovation: 'for technological innovation',
         },
     },
@@ -1105,8 +1105,8 @@ export const translations: Record<Language, Translation> = {
             subtitle: 'Découvrez mes réalisations techniques et mes contributions à l\'innovation',
             researchTitle: "Conception et développement d'une architecture RAG",
             researchSubtitle: "Projet de Licence",
-            inProgressTitle: 'Projets en Cours',
-            inProgressSubtitle: 'Projets actuels en développement et technologies que j\'explore',
+            examplesTitle: 'Exemples de Sites Web',
+            examplesSubtitle: 'Propositions et conceptions de référence construites avec Next.js et TailwindCSS',
             viewDemo: 'Voir',
             viewCode: 'Code',
             moreProjects: 'Découvrez plus de projets sur mes plateformes de développement',
@@ -1351,7 +1351,7 @@ export const translations: Record<Language, Translation> = {
         },
         footer: {
             description: 'Ingénieur en systèmes informatiques passionné par l\'innovation technologique',
-            createdWith: 'Créé avec',
+            createdWith: 'Créé',
             forInnovation: 'pour l\'innovation technologique',
         },
     },
