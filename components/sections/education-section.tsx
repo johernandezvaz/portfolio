@@ -7,16 +7,16 @@ import { useLanguage } from '@/hooks/use-language';
 
 const EducationSection = () => {
   const { t } = useLanguage();
-  
+
   const education = [
     {
       degree: t.education.degrees.engineering.degree,
       institution: t.education.degrees.engineering.institution,
       location: "Chihuahua, México",
-      period: "Enero 2022 - Julio 2026 (previsto)",
+      period: "Enero 2022 - Junio 2026",
       description: t.education.degrees.engineering.description,
       achievements: t.education.degrees.engineering.achievements,
-      status: "current"
+      status: "completed"
     },
     {
       degree: t.education.degrees.license.degree,
@@ -58,9 +58,8 @@ const EducationSection = () => {
                   <div className="hidden md:flex absolute left-6 w-4 h-4 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-full border-4 border-background shadow-lg z-10"></div>
 
                   {/* Content Card */}
-                  <Card className={`w-full md:ml-16 group hover:shadow-xl transition-all duration-300 ${
-                    item.status === 'current' ? 'border-dashed border-[#C5A880]' : ''
-                  }`}>
+                  <Card className={`w-full md:ml-16 group hover:shadow-xl transition-all duration-300 ${item.status === 'current' ? 'border-dashed border-[#C5A880]' : ''
+                    }`}>
                     <CardContent className="p-8">
                       <div className="grid lg:grid-cols-3 gap-6">
                         {/* Main Info */}

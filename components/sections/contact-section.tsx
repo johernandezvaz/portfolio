@@ -84,8 +84,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: t.contact.labels.phone,
-      value: '+52 614 397 7741',
-      href: 'tel:+526143977741'
+      value: '+52 614 539 26 67',
+      href: 'tel:+526145392667'
     },
     {
       icon: MapPin,
@@ -156,121 +156,121 @@ const ContactSection = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
+                          {t.contact.fullName.includes('Nombre') ? 'Nombre(s)' : 'First Name'} *
+                        </label>
+                        <input
+                          id="first_name"
+                          name="first_name"
+                          type="text"
+                          value={formData.first_name}
+                          onChange={handleInputChange}
+                          placeholder={t.contact.fullName.includes('Nombre') ? 'Tu nombre' : 'Your first name'}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
+                          {t.contact.fullName.includes('Nombre') ? 'Apellidos' : 'Last Name'} *
+                        </label>
+                        <input
+                          id="last_name"
+                          name="last_name"
+                          type="text"
+                          value={formData.last_name}
+                          onChange={handleInputChange}
+                          placeholder={t.contact.fullName.includes('Nombre') ? 'Tus apellidos' : 'Your last name'}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          required
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
-                        {t.contact.fullName.includes('Nombre') ? 'Nombre(s)' : 'First Name'} *
+                      <label htmlFor="from_email" className="block text-sm font-medium text-gray-700">
+                        {t.contact.email} *
                       </label>
                       <input
-                        id="first_name"
-                        name="first_name"
-                        type="text"
-                        value={formData.first_name}
+                        id="from_email"
+                        name="from_email"
+                        type="email"
+                        value={formData.from_email}
                         onChange={handleInputChange}
-                        placeholder={t.contact.fullName.includes('Nombre') ? 'Tu nombre' : 'Your first name'}
+                        placeholder={t.contact.placeholders.email}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
                       />
                     </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                          {t.contact.labels.phone} *
+                        </label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="+52 123 456 7890"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="service_type" className="block text-sm font-medium text-gray-700">
+                          {t.contact.fullName.includes('Nombre') ? 'Servicio de interés' : 'Service of interest'} *
+                        </label>
+                        <select
+                          id="service_type"
+                          name="service_type"
+                          value={formData.service_type}
+                          onChange={handleInputChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 bg-white"
+                          required
+                        >
+                          <option value="">{t.contact.fullName.includes('Nombre') ? 'Selecciona un servicio' : 'Select a service'}</option>
+                          <option value="Desarrollo Web (Landing Page)">Desarrollo Web (Landing Page)</option>
+                          <option value="Desarrollo App Web (Software a medida)">Desarrollo App Web (Software a medida)</option>
+                          <option value="Automatización">Automatización</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
-                        {t.contact.fullName.includes('Nombre') ? 'Apellidos' : 'Last Name'} *
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                        {t.contact.message} *
                       </label>
-                      <input
-                        id="last_name"
-                        name="last_name"
-                        type="text"
-                        value={formData.last_name}
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleInputChange}
-                        placeholder={t.contact.fullName.includes('Nombre') ? 'Tus apellidos' : 'Your last name'}
+                        placeholder={t.contact.placeholders.message}
+                        rows={6}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
-                      />
+                      ></textarea>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="from_email" className="block text-sm font-medium text-gray-700">
-                      {t.contact.email} *
-                    </label>
-                    <input
-                      id="from_email"
-                      name="from_email"
-                      type="email"
-                      value={formData.from_email}
-                      onChange={handleInputChange}
-                      placeholder={t.contact.placeholders.email}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      required
-                    />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                        {t.contact.labels.phone} *
-                      </label>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="+52 123 456 7890"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="service_type" className="block text-sm font-medium text-gray-700">
-                        {t.contact.fullName.includes('Nombre') ? 'Servicio de interés' : 'Service of interest'} *
-                      </label>
-                      <select
-                        id="service_type"
-                        name="service_type"
-                        value={formData.service_type}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 bg-white"
-                        required
-                      >
-                        <option value="">{t.contact.fullName.includes('Nombre') ? 'Selecciona un servicio' : 'Select a service'}</option>
-                        <option value="Desarrollo Web (Landing Page)">Desarrollo Web (Landing Page)</option>
-                        <option value="Desarrollo App Web (Software a medida)">Desarrollo App Web (Software a medida)</option>
-                        <option value="Automatización">Automatización</option>
-                        <option value="Otro">Otro</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                      {t.contact.message} *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder={t.contact.placeholders.message}
-                      rows={6}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full bg-gradient-to-br from-[#0A192F] to-[#C5A880] text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center group"
-                  >
-                    {isLoading ? (
-                      <span>{t.contact.sending}</span>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                        {t.contact.send}
-                      </>
-                    )}
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full bg-gradient-to-br from-[#0A192F] to-[#C5A880] text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center group"
+                    >
+                      {isLoading ? (
+                        <span>{t.contact.sending}</span>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                          {t.contact.send}
+                        </>
+                      )}
                     </button>
                   </form>
                 )}
