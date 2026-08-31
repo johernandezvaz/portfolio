@@ -1,65 +1,143 @@
 'use client';
 
-import { Github, Mail, Heart, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Mail, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/hooks/use-language';
 
 const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
+  const links = [
+    {
+      label: 'GitHub',
+      href: 'https://github.com/johernandezvaz',
+      icon: Github,
+    },
+    {
+      label: 'Email',
+      href: 'mailto:johernandezvaz@gmail.com',
+      icon: Mail,
+    },
+    {
+      label: 'Kaggle',
+      href: 'https://www.kaggle.com/maikua/code',
+      icon: ExternalLink,
+    },
+  ];
+
   return (
-    <footer className="bg-muted py-12">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-playfair font-semibold mb-2">
+    <footer
+      style={{
+        backgroundColor: '#000000',
+        color: 'rgba(255,255,255,0.72)',
+        padding: '80px 24px',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px',
+            marginBottom: '48px',
+          }}
+          className="md:flex-row md:items-start md:justify-between"
+        >
+          <div>
+            <p
+              style={{
+                color: '#ffffff',
+                fontFamily: 'var(--font-display)',
+                fontSize: '16px',
+                fontWeight: 600,
+                letterSpacing: '0.24px',
+                marginBottom: '8px',
+              }}
+            >
               José de Jesús Hernández Vázquez
-            </h3>
-            <p className="text-sm text-muted-foreground">
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: 1.43,
+                color: 'rgba(255,255,255,0.72)',
+                maxWidth: '320px',
+              }}
+            >
               {t.footer.description}
             </p>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" asChild>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            {links.map((link) => (
               <a
-                href="mailto:johernandezvaz@gmail.com"
-                className="flex items-center space-x-2"
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                aria-label={link.label}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '9999px',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  color: 'rgba(255,255,255,0.72)',
+                  transition: 'color 0.15s ease, border-color 0.15s ease',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.color = '#ffffff';
+                  el.style.borderColor = 'rgba(255,255,255,0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.color = 'rgba(255,255,255,0.72)';
+                  el.style.borderColor = 'rgba(255,255,255,0.12)';
+                }}
               >
-                <Mail className="w-4 h-4" />
-                <span className="sr-only">Email</span>
+                <link.icon style={{ width: '16px', height: '16px' }} />
               </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://github.com/johernandezvaz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2"
-              >
-                <Github className="w-4 h-4" />
-                <span className="sr-only">GitHub</span>
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://www.kaggle.com/maikua/code"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span className="sr-only">Kaggle</span>
-              </a>
-            </Button>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-6 text-center">
-          <p className="text-sm text-muted-foreground flex items-center justify-center space-x-1">
-            <span>© {currentYear} José de Jesús Hernández Vázquez. {t.footer.createdWith}</span>
-            <span>{t.footer.forInnovation}</span>
+        <div
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+            paddingTop: '24px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '13px',
+              fontWeight: 400,
+              lineHeight: 1.4,
+              color: 'rgba(255,255,255,0.72)',
+            }}
+          >
+            © {currentYear} José de Jesús Hernández Vázquez. {t.footer.createdWith}
+          </p>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '13px',
+              fontWeight: 400,
+              lineHeight: 1.4,
+              color: 'rgba(255,255,255,0.40)',
+            }}
+          >
+            {t.footer.forInnovation}
           </p>
         </div>
       </div>

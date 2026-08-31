@@ -1,10 +1,7 @@
 "use client"
 
-import { ExternalLink, Github, Calendar, Tag, Award, Clock, TrendingUp } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { ExternalLink, Github, Calendar, Tag, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
 import SectionTitle from "@/components/ui/section-title"
 import Image from "next/image"
 import { useLanguage } from "@/hooks/use-language"
@@ -83,9 +80,7 @@ const ProjectsSection = () => {
             category: t.projects.categories.ecommerce,
             period: "Enero 2025 - Marzo 2025",
             highlights: t.projects.list.sapphirus.highlights,
-            links: {
-                demo: "https://sapphirus.com.mx/",
-            },
+            links: { demo: "https://sapphirus.com.mx/" },
         },
         {
             title: t.projects.list.fajas.title,
@@ -95,9 +90,7 @@ const ProjectsSection = () => {
             category: t.projects.categories.ecommerce,
             period: "Junio 2025 - Julio 2025",
             highlights: t.projects.list.fajas.highlights,
-            links: {
-                demo: "https://fajascolombianasmaydel.com.mx/",
-            },
+            links: { demo: "https://fajascolombianasmaydel.com.mx/" },
         },
         {
             title: t.projects.list.kleinnotes.title,
@@ -107,9 +100,7 @@ const ProjectsSection = () => {
             category: t.projects.categories.ai,
             period: "Junio 2024 - Presente",
             highlights: t.projects.list.kleinnotes.highlights,
-            links: {
-                github: "https://github.com/maikuamx/kleinnotes",
-            },
+            links: { github: "https://github.com/maikuamx/kleinnotes" },
         },
         {
             title: t.projects.list.lumier.title,
@@ -119,9 +110,7 @@ const ProjectsSection = () => {
             category: t.projects.categories.iot,
             period: "Enero 2024 - Mayo 2024",
             highlights: t.projects.list.lumier.highlights,
-            links: {
-                github: "",
-            },
+            links: { github: "" },
         },
         {
             title: t.projects.list.accounting.title,
@@ -131,9 +120,7 @@ const ProjectsSection = () => {
             category: t.projects.categories.web,
             period: "Febrero 2023 - Agosto 2023",
             highlights: t.projects.list.accounting.highlights,
-            links: {
-                demo: "https://pvacontadores.com.mx/",
-            },
+            links: { demo: "https://pvacontadores.com.mx/" },
         },
         {
             title: t.projects.list.laboratory.title,
@@ -143,214 +130,406 @@ const ProjectsSection = () => {
             category: t.projects.categories.web,
             period: "Agosto 2021 - Agosto 2022",
             highlights: t.projects.list.laboratory.highlights,
-            links: {
-                demo: "https://www.asecalab.com.mx/",
-            },
+            links: { demo: "https://www.asecalab.com.mx/" },
         },
     ]
 
     return (
-        <section id="proyectos" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4">
-                <div className="max-w-6xl mx-auto">
-                    <SectionTitle title={t.projects.title} subtitle={t.projects.subtitle} />
+        <section
+            id="proyectos"
+            style={{
+                backgroundColor: '#ffffff',
+                color: '#191c1f',
+                padding: '88px 24px',
+            }}
+        >
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+                <SectionTitle title={t.projects.title} subtitle={t.projects.subtitle} mode="light" />
 
-                    {/* Example Projects Section */}
-                    <div className="mb-12">
-                        <div className="text-center mb-8">
-                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.examplesTitle}</h3>
-                            <p className="text-muted-foreground">{t.projects.examplesSubtitle}</p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {exampleProjects.map((project, index) => (
-                                <Card key={index} className="group hover:shadow-xl transition-all duration-500 overflow-hidden border-dashed border-[#C5A880]/50 flex flex-col">
-                                    <div className="relative h-40 overflow-hidden flex-shrink-0">
-                                        <Image
-                                            src={project.image || "/placeholder.svg"}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                        <div className="absolute bottom-3 left-3 right-3">
-                                            <Badge variant="secondary" className="mb-1 text-xs">
-                                                {project.category}
-                                            </Badge>
-                                            <h3 className="text-lg font-playfair font-bold text-white">{project.title}</h3>
-                                        </div>
-                                    </div>
-
-                                    <CardContent className="p-5 flex flex-col flex-grow">
-                                        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{project.description}</p>
-
-                                        <div>
-                                            <h4 className="font-semibold text-foreground mb-2 flex items-center space-x-2">
-                                                <TrendingUp className="w-3 h-3 text-[#C5A880]" />
-                                                <span className="text-sm">{t.projects.keyPoints}</span>
-                                            </h4>
-                                            <ul className="space-y-1">
-                                                {project.highlights.map((highlight, highlightIndex) => (
-                                                    <li key={highlightIndex} className="flex items-start space-x-2 text-xs text-muted-foreground">
-                                                        <div className="w-1 h-1 bg-orange-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                                                        <span>{highlight}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        <div className="mb-4">
-                                            <h4 className="font-semibold text-foreground mb-2 text-sm">{t.projects.technologiesUsed}</h4>
-                                            <div className="flex flex-wrap gap-1">
-                                                {project.technologies.map((tech, techIndex) => (
-                                                    <Badge key={techIndex} variant="outline" className="text-xs px-2 py-0.5">
-                                                        {tech}
-                                                    </Badge>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        <div className="mt-auto pt-4 border-t border-border">
-                                            {project.links.demo && (
-                                                <Button size="sm" variant="outline" className="w-full text-xs" asChild>
-                                                    <a
-                                                        href={project.links.demo}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center justify-center space-x-2"
-                                                    >
-                                                        <ExternalLink className="w-3 h-3" />
-                                                        <span>{t.projects.viewDemo}</span>
-                                                    </a>
-                                                </Button>
-                                            )}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
+                {/* Example Projects */}
+                <div style={{ marginBottom: '80px' }}>
+                    <div style={{ marginBottom: '40px' }}>
+                        <h3
+                            style={{
+                                fontFamily: 'var(--font-display)',
+                                fontSize: '32px',
+                                fontWeight: 500,
+                                lineHeight: 1.19,
+                                letterSpacing: '-0.32px',
+                                color: '#191c1f',
+                                marginBottom: '8px',
+                            }}
+                        >
+                            {t.projects.examplesTitle}
+                        </h3>
+                        <p
+                            style={{
+                                fontFamily: 'var(--font-body)',
+                                fontSize: '16px',
+                                fontWeight: 400,
+                                lineHeight: 1.5,
+                                color: '#505a63',
+                            }}
+                        >
+                            {t.projects.examplesSubtitle}
+                        </p>
                     </div>
 
-                    {/* Completed Projects Section */}
-                    <div>
-                        <div className="text-center mb-8">
-                            <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">{t.projects.moreProjects}</h3>
-                            <p className="text-muted-foreground">Proyectos completados y en producción</p>
-                        </div>
+                    <div
+                        className="grid md:grid-cols-2 lg:grid-cols-3"
+                        style={{ gap: '16px' }}
+                    >
+                        {exampleProjects.map((project, index) => (
+                            <div
+                                key={index}
+                                className="card-light"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    overflow: 'hidden',
+                                    padding: 0,
+                                }}
+                            >
+                                {/* Image */}
+                                <div
+                                    style={{
+                                        position: 'relative',
+                                        height: '160px',
+                                        overflow: 'hidden',
+                                        borderRadius: '20px 20px 0 0',
+                                    }}
+                                >
+                                    <Image
+                                        src={project.image || "/placeholder.svg"}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover"
+                                        style={{ transition: 'transform 0.4s ease' }}
+                                        onMouseEnter={(e) => { (e.target as HTMLImageElement).style.transform = 'scale(1.04)'; }}
+                                        onMouseLeave={(e) => { (e.target as HTMLImageElement).style.transform = 'scale(1)'; }}
+                                    />
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            inset: 0,
+                                            background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)',
+                                        }}
+                                    />
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '12px',
+                                            left: '12px',
+                                            right: '12px',
+                                        }}
+                                    >
+                                        <span className="badge-tag" style={{ backgroundColor: 'rgba(255,255,255,0.9)', color: '#191c1f', marginBottom: '4px', display: 'inline-flex' }}>
+                                            {project.category}
+                                        </span>
+                                        <h3
+                                            style={{
+                                                fontFamily: 'var(--font-display)',
+                                                fontSize: '18px',
+                                                fontWeight: 500,
+                                                color: '#ffffff',
+                                                margin: 0,
+                                                display: 'block',
+                                            }}
+                                        >
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                </div>
 
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {otherProjects.map((project, index) => (
-                                <Card key={index} className="group hover:shadow-xl transition-all duration-500 overflow-hidden">
-                                    <div className="relative h-48 overflow-hidden">
-                                        <Image
-                                            src={project.image || "/placeholder.svg"}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                        <div className="absolute bottom-4 left-4 right-4">
-                                            <Badge variant="secondary" className="mb-2">
-                                                {project.category}
-                                            </Badge>
-                                            <h3 className={`text-xl font-playfair font-bold text-white`}>{project.title}</h3>
-                                        </div>
+                                {/* Content */}
+                                <div
+                                    style={{
+                                        padding: '24px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '16px',
+                                        flex: 1,
+                                    }}
+                                >
+                                    <p
+                                        style={{
+                                            fontFamily: 'var(--font-body)',
+                                            fontSize: '14px',
+                                            fontWeight: 400,
+                                            lineHeight: 1.43,
+                                            color: '#505a63',
+                                        }}
+                                    >
+                                        {project.description}
+                                    </p>
+
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                        <h4
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px',
+                                                fontFamily: 'var(--font-display)',
+                                                fontSize: '13px',
+                                                fontWeight: 600,
+                                                color: '#191c1f',
+                                                margin: 0,
+                                            }}
+                                        >
+                                            <TrendingUp style={{ width: '12px', height: '12px' }} />
+                                            {t.projects.keyPoints}
+                                        </h4>
+                                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                            {project.highlights.map((highlight, i) => (
+                                                <li
+                                                    key={i}
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'flex-start',
+                                                        gap: '8px',
+                                                        fontFamily: 'var(--font-body)',
+                                                        fontSize: '13px',
+                                                        fontWeight: 400,
+                                                        color: '#505a63',
+                                                    }}
+                                                >
+                                                    <div style={{ width: '4px', height: '4px', borderRadius: '9999px', backgroundColor: '#191c1f', marginTop: '5px', flexShrink: 0 }} />
+                                                    {highlight}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
-                                    <CardContent className="p-6 space-y-4">
-                                        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                                            <Calendar className="w-4 h-4" />
-                                            <span>{project.period}</span>
-                                        </div>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                        {project.technologies.map((tech, i) => (
+                                            <span key={i} className="badge-tag" style={{ fontSize: '12px' }}>{tech}</span>
+                                        ))}
+                                    </div>
 
-                                        <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                                    <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid #e2e2e7' }}>
+                                        {(project.links as any).demo && (
+                                            <a
+                                                href={(project.links as any).demo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn-dark"
+                                                style={{ width: '100%', fontSize: '14px', height: '40px', padding: '8px 16px' }}
+                                            >
+                                                <ExternalLink style={{ width: '14px', height: '14px', marginRight: '6px' }} />
+                                                {t.projects.viewDemo}
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
-                                        <div>
-                                            <h4 className="font-semibold text-foreground mb-2 flex items-center space-x-2">
-                                                <Tag className="w-4 h-4 text-[#C5A880]" />
-                                                <span>{t.projects.keyPoints}</span>
-                                            </h4>
-                                            <ul className="space-y-1">
-                                                {project.highlights.map((highlight, highlightIndex) => (
-                                                    <li key={highlightIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                                                        <div className="w-1.5 h-1.5 bg-[#C5A880] rounded-full mt-2 flex-shrink-0"></div>
-                                                        <span>{highlight}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h4 className="font-semibold text-foreground mb-3">{t.projects.technologiesUsed}</h4>
-                                            <div className="flex flex-wrap gap-2">
-                                                {project.technologies.map((tech, techIndex) => (
-                                                    <Badge key={techIndex} variant="outline" className="text-xs">
-                                                        {tech}
-                                                    </Badge>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        <div className="flex space-x-3 pt-4">
-                                            {(project.links as any).demo && (
-                                                <Button size="sm" variant="outline" asChild>
-                                                    <a
-                                                        href={(project.links as any).demo}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center space-x-2"
-                                                    >
-                                                        <ExternalLink className="w-4 h-4" />
-                                                        <span>{t.projects.viewDemo}</span>
-                                                    </a>
-                                                </Button>
-                                            )}
-                                            {(project.links as any).github && (
-                                                <Button size="sm" variant="outline" asChild>
-                                                    <a
-                                                        href={(project.links as any).github}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center space-x-2"
-                                                    >
-                                                        <Github className="w-4 h-4" />
-                                                        <span>{t.projects.viewCode}</span>
-                                                    </a>
-                                                </Button>
-                                            )}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
+                {/* Other Projects */}
+                <div>
+                    <div style={{ marginBottom: '40px' }}>
+                        <h3
+                            style={{
+                                fontFamily: 'var(--font-display)',
+                                fontSize: '32px',
+                                fontWeight: 500,
+                                lineHeight: 1.19,
+                                letterSpacing: '-0.32px',
+                                color: '#191c1f',
+                                marginBottom: '8px',
+                            }}
+                        >
+                            {t.projects.moreProjects}
+                        </h3>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: '#505a63' }}>
+                            Proyectos completados y en producción
+                        </p>
                     </div>
 
-                    <div className="mt-12 text-center">
-                        <p className="text-muted-foreground mb-6">{t.projects.moreProjects}</p>
-                        <div className="flex justify-center space-x-4">
-                            <Button variant="outline" asChild>
-                                <a
-                                    href="https://github.com/johernandezvaz"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center space-x-2"
+                    <div
+                        className="grid md:grid-cols-2"
+                        style={{ gap: '16px' }}
+                    >
+                        {otherProjects.map((project, index) => (
+                            <div
+                                key={index}
+                                className="card-light"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    overflow: 'hidden',
+                                    padding: 0,
+                                }}
+                            >
+                                {/* Image */}
+                                <div
+                                    style={{
+                                        position: 'relative',
+                                        height: '192px',
+                                        overflow: 'hidden',
+                                        borderRadius: '20px 20px 0 0',
+                                    }}
                                 >
-                                    <Github className="w-4 h-4" />
-                                    <span>GitHub</span>
-                                </a>
-                            </Button>
-                            <Button variant="outline" asChild>
-                                <a
-                                    href="https://www.kaggle.com/maikua/code"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center space-x-2"
-                                >
-                                    <ExternalLink className="w-4 h-4" />
-                                    <span>Kaggle</span>
-                                </a>
-                            </Button>
-                        </div>
+                                    <Image
+                                        src={project.image || "/placeholder.svg"}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            inset: 0,
+                                            background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)',
+                                        }}
+                                    />
+                                    <div style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px' }}>
+                                        <span className="badge-tag" style={{ backgroundColor: 'rgba(255,255,255,0.9)', color: '#191c1f', marginBottom: '6px', display: 'inline-flex' }}>
+                                            {project.category}
+                                        </span>
+                                        <h3
+                                            style={{
+                                                fontFamily: 'var(--font-display)',
+                                                fontSize: '20px',
+                                                fontWeight: 500,
+                                                color: '#ffffff',
+                                                margin: 0,
+                                                display: 'block',
+                                            }}
+                                        >
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+                                    {(project as any).period && (
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px',
+                                                fontFamily: 'var(--font-body)',
+                                                fontSize: '13px',
+                                                color: '#8d969e',
+                                            }}
+                                        >
+                                            <Calendar style={{ width: '13px', height: '13px' }} />
+                                            <span>{(project as any).period}</span>
+                                        </div>
+                                    )}
+
+                                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', lineHeight: 1.43, color: '#505a63', margin: 0 }}>
+                                        {project.description}
+                                    </p>
+
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                        <h4
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px',
+                                                fontFamily: 'var(--font-display)',
+                                                fontSize: '13px',
+                                                fontWeight: 600,
+                                                color: '#191c1f',
+                                                margin: 0,
+                                            }}
+                                        >
+                                            <Tag style={{ width: '12px', height: '12px' }} />
+                                            {t.projects.keyPoints}
+                                        </h4>
+                                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                            {project.highlights.map((highlight, i) => (
+                                                <li
+                                                    key={i}
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'flex-start',
+                                                        gap: '8px',
+                                                        fontFamily: 'var(--font-body)',
+                                                        fontSize: '13px',
+                                                        color: '#505a63',
+                                                    }}
+                                                >
+                                                    <div style={{ width: '4px', height: '4px', borderRadius: '9999px', backgroundColor: '#191c1f', marginTop: '5px', flexShrink: 0 }} />
+                                                    {highlight}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                        {project.technologies.map((tech, i) => (
+                                            <span key={i} className="badge-tag" style={{ fontSize: '12px' }}>{tech}</span>
+                                        ))}
+                                    </div>
+
+                                    <div style={{ display: 'flex', gap: '8px', paddingTop: '16px', borderTop: '1px solid #e2e2e7', marginTop: 'auto' }}>
+                                        {(project.links as any).demo && (
+                                            <a
+                                                href={(project.links as any).demo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn-dark"
+                                                style={{ fontSize: '14px', height: '40px', padding: '8px 16px' }}
+                                            >
+                                                <ExternalLink style={{ width: '14px', height: '14px', marginRight: '6px' }} />
+                                                {t.projects.viewDemo}
+                                            </a>
+                                        )}
+                                        {(project.links as any).github && (
+                                            <a
+                                                href={(project.links as any).github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn-outline-light"
+                                                style={{ fontSize: '14px', height: '40px', padding: '8px 16px' }}
+                                            >
+                                                <Github style={{ width: '14px', height: '14px', marginRight: '6px' }} />
+                                                {t.projects.viewCode}
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Bottom CTA */}
+                <div style={{ marginTop: '64px', textAlign: 'center' }}>
+                    <p
+                        style={{
+                            fontFamily: 'var(--font-body)',
+                            fontSize: '16px',
+                            color: '#505a63',
+                            marginBottom: '24px',
+                        }}
+                    >
+                        {t.projects.moreProjects}
+                    </p>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                        <a
+                            href="https://github.com/johernandezvaz"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-dark"
+                        >
+                            <Github style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                            GitHub
+                        </a>
+                        <a
+                            href="https://www.kaggle.com/maikua/code"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-outline-light"
+                        >
+                            <ExternalLink style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                            Kaggle
+                        </a>
                     </div>
                 </div>
             </div>

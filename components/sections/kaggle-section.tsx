@@ -11,30 +11,73 @@ export default function KaggleSection() {
   const [selectedProject, setSelectedProject] = useState<KaggleProject | null>(null)
 
   return (
-    <section id="kaggle-notebooks" className="py-20 bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A880]/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
-
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center justify-center mb-12">
-            <div className="w-12 h-12 bg-[#C5A880]/10 rounded-full flex items-center justify-center mb-4">
-              <Database className="w-6 h-6 text-[#C5A880]" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-center mb-4 text-foreground">Proyectos de ML / DL</h2>
-            <p className="text-muted-foreground text-center max-w-2xl text-lg">
-              Explora mis notebooks de Kaggle ejecutables directamente en el navegador. Análisis de datos, Machine Learning y Deep Learning.
-            </p>
+    <section
+      id="kaggle-notebooks"
+      style={{
+        backgroundColor: '#000000',
+        color: '#ffffff',
+        padding: '88px 24px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <div
+            style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '12px',
+              backgroundColor: 'rgba(255,255,255,0.08)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px',
+            }}
+          >
+            <Database style={{ width: '22px', height: '22px', color: '#ffffff' }} />
           </div>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 500,
+              lineHeight: 1.21,
+              letterSpacing: '-0.48px',
+              color: '#ffffff',
+              marginBottom: '16px',
+            }}
+          >
+            Proyectos de ML / DL
+          </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '18px',
+              fontWeight: 400,
+              lineHeight: 1.56,
+              letterSpacing: '-0.09px',
+              color: 'rgba(255,255,255,0.72)',
+              maxWidth: '560px',
+              margin: '0 auto',
+            }}
+          >
+            Explora mis notebooks de Kaggle ejecutables directamente en el navegador. Análisis de datos, Machine Learning y Deep Learning.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {kaggleProjects.map((project) => (
-              <KaggleProjectCard
-                key={project.id}
-                project={project}
-                onOpenNotebook={setSelectedProject}
-              />
-            ))}
-          </div>
+        <div
+          className="grid md:grid-cols-2 lg:grid-cols-3"
+          style={{ gap: '16px' }}
+        >
+          {kaggleProjects.map((project) => (
+            <KaggleProjectCard
+              key={project.id}
+              project={project}
+              onOpenNotebook={setSelectedProject}
+            />
+          ))}
         </div>
       </div>
 

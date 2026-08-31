@@ -1,9 +1,6 @@
 "use client"
 
 import { ExternalLink, Eye, Calendar } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { KaggleProject } from "@/lib/kaggle-projects"
 
 interface KaggleProjectCardProps {
@@ -13,50 +10,125 @@ interface KaggleProjectCardProps {
 
 export default function KaggleProjectCard({ project, onOpenNotebook }: KaggleProjectCardProps) {
   return (
-    <Card className="group hover:shadow-xl transition-all duration-500 overflow-hidden border-dashed border-[#C5A880]/50 flex flex-col h-full bg-card">
-      <CardContent className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-start mb-4 gap-4">
-          <h3 className="text-xl font-playfair font-bold text-foreground group-hover:text-[#C5A880] transition-colors">{project.title}</h3>
-          <div className="flex items-center space-x-1 text-xs text-muted-foreground whitespace-nowrap bg-muted/50 px-2 py-1 rounded-full border border-border/50">
-            <Calendar className="w-3 h-3" />
-            <span>{project.date}</span>
-          </div>
-        </div>
+    <div
+      className="card-dark"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        transition: 'border-color 0.2s ease',
+      }}
+    >
 
-        <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
-          {project.description}
-        </p>
-
-        <div className="mb-6">
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, i) => (
-              <Badge key={i} variant="secondary" className="text-xs font-normal bg-muted hover:bg-muted/80">
-                {tag}
-              </Badge>
-            ))}
-          </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          gap: '16px',
+          marginBottom: '16px',
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '20px',
+            fontWeight: 500,
+            lineHeight: 1.4,
+            color: '#ffffff',
+            margin: 0,
+          }}
+        >
+          {project.title}
+        </h3>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            color: 'rgba(255,255,255,0.48)',
+            fontSize: '12px',
+            fontWeight: 400,
+            whiteSpace: 'nowrap',
+            backgroundColor: 'rgba(255,255,255,0.06)',
+            padding: '4px 10px',
+            borderRadius: '9999px',
+            flexShrink: 0,
+          }}
+        >
+          <Calendar style={{ width: '11px', height: '11px' }} />
+          <span>{project.date}</span>
         </div>
+      </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-border">
-          <Button 
-            className="w-full sm:w-auto flex-1 bg-[#C5A880] hover:bg-[#B39770] text-white" 
-            onClick={() => onOpenNotebook(project)}
-          >
-            <Eye className="w-4 h-4 mr-2" />
-            Ver notebook
-          </Button>
-          <Button variant="outline" className="w-full sm:w-auto flex-1 border-[#C5A880]/30 hover:bg-[#C5A880]/10" asChild>
-            <a
-              href={project.kaggleUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Kaggle
-            </a>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '14px',
+          fontWeight: 400,
+          lineHeight: 1.43,
+          color: 'rgba(255,255,255,0.72)',
+          marginBottom: '24px',
+          flex: 1,
+        }}
+      >
+        {project.description}
+      </p>
+
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '6px',
+          marginBottom: '24px',
+        }}
+      >
+        {project.tags.map((tag, i) => (
+          <span key={i} className="badge-tag-dark">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+
+      <div
+        style={{
+          display: 'flex',
+          gap: '8px',
+          paddingTop: '20px',
+          borderTop: '1px solid rgba(255,255,255,0.12)',
+          marginTop: 'auto',
+        }}
+      >
+        <button
+          className="btn-primary"
+          style={{
+            flex: 1,
+            fontSize: '14px',
+            height: '40px',
+            padding: '8px 16px',
+          }}
+          onClick={() => onOpenNotebook(project)}
+        >
+          <Eye style={{ width: '14px', height: '14px', marginRight: '6px' }} />
+          Ver notebook
+        </button>
+        <a
+          href={project.kaggleUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-outline-dark"
+          style={{
+            flex: 1,
+            fontSize: '14px',
+            height: '40px',
+            padding: '8px 16px',
+          }}
+        >
+          <ExternalLink style={{ width: '14px', height: '14px', marginRight: '6px' }} />
+          Kaggle
+        </a>
+      </div>
+    </div>
   )
 }

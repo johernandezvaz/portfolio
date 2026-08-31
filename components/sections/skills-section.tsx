@@ -1,171 +1,274 @@
 'use client';
 
 import { Languages, Code, Settings, Award, TrendingUp } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
 import SectionTitle from '@/components/ui/section-title';
 import { useLanguage } from '@/hooks/use-language';
+import { Progress } from '@/components/ui/progress';
 
 const SkillsSection = () => {
   const { t } = useLanguage();
-  
+
   const languages = [
     { name: t.skills.languages.spanish, level: 100, description: t.skills.languages.descriptions.spanish },
-    { name: t.skills.languages.french, level: 85, description: t.skills.languages.descriptions.french },
-    { name: t.skills.languages.english, level: 90, description: t.skills.languages.descriptions.english },
+    { name: t.skills.languages.french,  level: 85,  description: t.skills.languages.descriptions.french },
+    { name: t.skills.languages.english, level: 90,  description: t.skills.languages.descriptions.english },
   ];
 
   const technicalSkills = [
-    { name: 'Python', level: 95, category: 'Programación' },
+    { name: 'Python',                level: 95, category: 'Programación' },
     { name: 'JavaScript/TypeScript', level: 88, category: 'Desarrollo Web' },
-    { name: 'React/Next.js', level: 85, category: 'Frontend' },
-    { name: 'PyTorch/TensorFlow', level: 80, category: 'IA/ML' },
-    { name: 'Node.js', level: 82, category: 'Backend' },
-    { name: 'Django/Flask', level: 85, category: 'Frameworks Python' },
-    { name: 'C/C++', level: 78, category: 'Sistemas Embebidos' },
-    { name: 'MicroPython', level: 80, category: 'IoT' },
-    { name: 'SQL/NoSQL', level: 75, category: 'Bases de datos' },
-    { name: 'HTML/CSS', level: 90, category: 'Frontend' },
-    { name: 'Java', level: 70, category: 'Programación' },
-    { name: 'Rust', level: 65, category: 'Sistemas' },
+    { name: 'React/Next.js',         level: 85, category: 'Frontend' },
+    { name: 'PyTorch/TensorFlow',    level: 80, category: 'IA/ML' },
+    { name: 'Node.js',               level: 82, category: 'Backend' },
+    { name: 'Django/Flask',          level: 85, category: 'Frameworks Python' },
+    { name: 'C/C++',                 level: 78, category: 'Sistemas Embebidos' },
+    { name: 'MicroPython',           level: 80, category: 'IoT' },
   ];
 
   const tools = [
     'Jupyter Notebook', 'VS Code', 'PyCharm', 'Figma', 'Git/GitHub',
     'Docker', 'Postman', 'Arduino IDE', 'Raspberry Pi', 'ESP32',
-    'Matplotlib', 'Seaborn', 'NumPy', 'Scikit-Learn', 'PostgreSQL', 'Stripe', 'Supabase'
+    'Matplotlib', 'Seaborn', 'NumPy', 'Scikit-Learn', 'PostgreSQL', 'Stripe', 'Supabase',
   ];
 
   const methodologies = [
-    { name: t.skills.methodologies.list.iot.name, description: t.skills.methodologies.list.iot.description },
+    { name: t.skills.methodologies.list.iot.name,               description: t.skills.methodologies.list.iot.description },
     { name: t.skills.methodologies.list.projectManagement.name, description: t.skills.methodologies.list.projectManagement.description },
-    { name: t.skills.methodologies.list.optimization.name, description: t.skills.methodologies.list.optimization.description },
-    { name: t.skills.methodologies.list.ai.name, description: t.skills.methodologies.list.ai.description },
+    { name: t.skills.methodologies.list.optimization.name,      description: t.skills.methodologies.list.optimization.description },
+    { name: t.skills.methodologies.list.ai.name,                description: t.skills.methodologies.list.ai.description },
   ];
 
+  const stats = [
+    { icon: Languages,   label: t.skills.stats.languagesMastered, value: '3' },
+    { icon: Code,        label: t.skills.stats.technologies,       value: '15+' },
+    { icon: Settings,    label: t.skills.stats.professionalTools,  value: '15+' },
+    { icon: TrendingUp,  label: t.skills.stats.yearsExperience,    value: '4+' },
+  ];
+
+  const cardStyle: React.CSSProperties = {
+    backgroundColor: '#ffffff',
+    border: '1px solid #e2e2e7',
+    borderRadius: '20px',
+    padding: '32px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '24px',
+    transition: 'border-color 0.2s ease',
+  };
+
+  const cardTitleStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    fontFamily: 'var(--font-display)',
+    fontSize: '20px',
+    fontWeight: 500,
+    lineHeight: 1.4,
+    color: '#191c1f',
+    margin: 0,
+  };
+
   return (
-    <section id="habilidades" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle
-            title={t.skills.title}
-            subtitle={t.skills.subtitle}
-          />
+    <section
+      id="habilidades"
+      style={{
+        backgroundColor: '#ffffff',
+        color: '#191c1f',
+        padding: '88px 24px',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <SectionTitle
+          title={t.skills.title}
+          subtitle={t.skills.subtitle}
+          mode="light"
+        />
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {/* Languages */}
-            <Card className="group hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Languages className="w-5 h-5 text-[#C5A880]" />
-                  <span>{t.skills.languages.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {languages.map((language, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium text-foreground">{language.name}</span>
-                      <span className="text-sm text-muted-foreground">{language.level}%</span>
-                    </div>
-                    <Progress value={language.level} className="h-2" />
-                    <p className="text-sm text-muted-foreground">{language.description}</p>
+        <div
+          className="grid lg:grid-cols-2"
+          style={{ gap: '16px', marginBottom: '16px' }}
+        >
+          {/* Languages */}
+          <div style={cardStyle}>
+            <h3 style={cardTitleStyle}>
+              <Languages style={{ width: '18px', height: '18px', color: '#494fdf' }} />
+              {t.skills.languages.title}
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {languages.map((language, index) => (
+                <div key={index} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '16px', fontWeight: 600, color: '#191c1f' }}>
+                      {language.name}
+                    </span>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#8d969e' }}>
+                      {language.level}%
+                    </span>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            {/* Technical Skills */}
-            <Card className="group hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Code className="w-5 h-5 text-[#C5A880]" />
-                  <span>{t.skills.technical.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {technicalSkills.slice(0, 8).map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <span className="font-medium text-foreground">{skill.name}</span>
-                        <Badge variant="outline" className="ml-2 text-xs">
-                          {skill.category}
-                        </Badge>
-                      </div>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
+                  <div
+                    style={{
+                      height: '4px',
+                      backgroundColor: '#f4f4f4',
+                      borderRadius: '9999px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: '100%',
+                        width: `${language.level}%`,
+                        backgroundColor: '#494fdf',
+                        borderRadius: '9999px',
+                      }}
+                    />
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Tools & Technologies */}
-            <Card className="group hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Settings className="w-5 h-5 text-[#C5A880]" />
-                  <span>{t.skills.tools.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {tools.map((tool, index) => (
-                    <Badge key={index} variant="secondary" className="text-sm">
-                      {tool}
-                    </Badge>
-                  ))}
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#505a63', margin: 0 }}>
+                    {language.description}
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Methodologies */}
-            <Card className="group hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Award className="w-5 h-5 text-[#C5A880]" />
-                  <span>{t.skills.methodologies.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {methodologies.map((method, index) => (
-                  <div key={index} className="space-y-2">
-                    <h4 className="font-medium text-foreground">{method.name}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {method.description}
-                    </p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+              ))}
+            </div>
           </div>
 
-          {/* Skills Summary */}
-          <div className="mt-12 bg-gradient-to-r from-[#0A192F]/5 to-[#C5A880]/5 rounded-2xl p-8">
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              {[
-                { icon: Languages, label: t.skills.stats.languagesMastered, value: '3' },
-                { icon: Code, label: t.skills.stats.technologies, value: '15+' },
-                { icon: Settings, label: t.skills.stats.professionalTools, value: '15+' },
-                { icon: TrendingUp, label: t.skills.stats.yearsExperience, value: '4+' },
-              ].map((stat, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#0A192F] to-[#C5A880] rounded-lg flex items-center justify-center mx-auto">
-                    <stat.icon className="w-6 h-6 text-white" />
+          {/* Technical Skills */}
+          <div style={cardStyle}>
+            <h3 style={cardTitleStyle}>
+              <Code style={{ width: '18px', height: '18px', color: '#494fdf' }} />
+              {t.skills.technical.title}
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {technicalSkills.map((skill, index) => (
+                <div key={index} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#191c1f' }}>
+                        {skill.name}
+                      </span>
+                      <span className="badge-tag" style={{ fontSize: '11px', padding: '2px 8px' }}>
+                        {skill.category}
+                      </span>
+                    </div>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#8d969e' }}>
+                      {skill.level}%
+                    </span>
                   </div>
-                  <div className="text-3xl font-playfair font-bold text-primary">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {stat.label}
+                  <div
+                    style={{
+                      height: '3px',
+                      backgroundColor: '#f4f4f4',
+                      borderRadius: '9999px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: '100%',
+                        width: `${skill.level}%`,
+                        backgroundColor: '#494fdf',
+                        borderRadius: '9999px',
+                      }}
+                    />
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div
+          className="grid lg:grid-cols-2"
+          style={{ gap: '16px' }}
+        >
+          {/* Tools */}
+          <div style={cardStyle}>
+            <h3 style={cardTitleStyle}>
+              <Settings style={{ width: '18px', height: '18px', color: '#494fdf' }} />
+              {t.skills.tools.title}
+            </h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {tools.map((tool, index) => (
+                <span key={index} className="badge-tag">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Methodologies */}
+          <div style={cardStyle}>
+            <h3 style={cardTitleStyle}>
+              <Award style={{ width: '18px', height: '18px', color: '#494fdf' }} />
+              {t.skills.methodologies.title}
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {methodologies.map((method, index) => (
+                <div key={index} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <h4 style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#191c1f', margin: 0 }}>
+                    {method.name}
+                  </h4>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', lineHeight: 1.43, color: '#505a63', margin: 0 }}>
+                    {method.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Summary */}
+        <div
+          style={{
+            backgroundColor: '#f4f4f4',
+            borderRadius: '20px',
+            padding: '48px 32px',
+            marginTop: '16px',
+          }}
+        >
+          <div
+            className="grid grid-cols-2 md:grid-cols-4"
+            style={{ gap: '32px' }}
+          >
+            {stats.map((stat, index) => (
+              <div key={index} style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '12px',
+                    backgroundColor: '#191c1f',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 16px',
+                  }}
+                >
+                  <stat.icon style={{ width: '20px', height: '20px', color: '#ffffff' }} />
+                </div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '32px',
+                    fontWeight: 500,
+                    lineHeight: 1.19,
+                    letterSpacing: '-0.32px',
+                    color: '#191c1f',
+                    marginBottom: '6px',
+                  }}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    fontWeight: 400,
+                    color: '#505a63',
+                  }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
