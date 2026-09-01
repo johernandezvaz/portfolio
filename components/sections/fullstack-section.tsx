@@ -17,8 +17,8 @@ import { useLanguage } from "@/hooks/use-language";
 import { fullstackProjects } from "@/lib/fullstack-projects";
 
 export default function FullStackSection() {
-  const { currentLanguage } = useLanguage();
-  const lang = (currentLanguage || 'es') as 'es' | 'en' | 'fr';
+  const { language } = useLanguage();
+  const lang = (language || 'es') as 'es' | 'en' | 'fr';
 
   const sectionHeaders = {
     es: {
@@ -155,7 +155,6 @@ export default function FullStackSection() {
           </p>
         </div>
 
-        {/* Projects List */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
           {fullstackProjects.map((project) => (
             <div
@@ -178,9 +177,9 @@ export default function FullStackSection() {
                   alignItems: 'start',
                 }}
               >
-                {/* Left Column: Project Info & Features */}
+
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  {/* Status & Badge Row */}
+
                   <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
                     <div
                       style={{
@@ -222,7 +221,6 @@ export default function FullStackSection() {
                     </span>
                   </div>
 
-                  {/* Title & Tagline */}
                   <div>
                     <h3
                       style={{
@@ -252,7 +250,6 @@ export default function FullStackSection() {
                     </p>
                   </div>
 
-                  {/* Description */}
                   <p
                     style={{
                       fontFamily: 'var(--font-body)',
