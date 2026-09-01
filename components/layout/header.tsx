@@ -44,13 +44,14 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'inicio',        label: t.nav.home },
-    { id: 'acerca-de',    label: t.nav.about },
-    { id: 'trayectoria',  label: t.nav.education },
-    { id: 'proyectos',    label: t.nav.projects },
-    { id: 'habilidades',  label: t.nav.skills },
-    { id: 'objetivo',     label: t.nav.objectives },
-    { id: 'contact',      label: t.nav.contact },
+    { id: 'inicio',              label: t.nav.home },
+    { id: 'acerca-de',          label: t.nav.about },
+    { id: 'trayectoria',        label: t.nav.education },
+    { id: 'proyectos',          label: t.nav.projects },
+    { id: 'fullstack-projects', label: t.nav.fullstack },
+    { id: 'habilidades',        label: t.nav.skills },
+    { id: 'objetivo',           label: t.nav.objectives },
+    { id: 'contact',            label: t.nav.contact },
   ];
 
   if (!mounted) return null;

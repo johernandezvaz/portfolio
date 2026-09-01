@@ -7,6 +7,7 @@ import HeroSection from '@/components/sections/hero-section';
 import AboutSection from '@/components/sections/about-section';
 import EducationSection from '@/components/sections/education-section';
 import ProjectsSection from '@/components/sections/projects-section';
+import FullStackSection from '@/components/sections/fullstack-section';
 import KaggleSection from '@/components/sections/kaggle-section';
 import SkillsSection from '@/components/sections/skills-section';
 import MotivationSection from '@/components/sections/motivation-section';
@@ -31,6 +32,7 @@ export default function Home() {
         <AboutSection />
         <EducationSection />
         <ProjectsSection />
+        <FullStackSection />
         <KaggleSection />
         <SkillsSection />
         <MotivationSection />

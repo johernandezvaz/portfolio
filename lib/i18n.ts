@@ -7,6 +7,7 @@ export interface Translation {
         about: string;
         education: string;
         projects: string;
+        fullstack: string;
         skills: string;
         objectives: string;
         contact: string;
@@ -317,6 +318,7 @@ export const translations: Record<Language, Translation> = {
             about: 'Acerca de',
             education: 'Trayectoria',
             projects: 'Proyectos',
+            fullstack: 'Full Stack',
             skills: 'Habilidades',
             objectives: 'Objetivo',
             contact: 'Contacto',
@@ -665,6 +667,7 @@ export const translations: Record<Language, Translation> = {
             about: 'About',
             education: 'Education',
             projects: 'Projects',
+            fullstack: 'Full Stack',
             skills: 'Skills',
             objectives: 'Objectives',
             contact: 'Contact',
@@ -1013,6 +1016,7 @@ export const translations: Record<Language, Translation> = {
             about: 'À propos',
             education: 'Parcours',
             projects: 'Projets',
+            fullstack: 'Full Stack',
             skills: 'Compétences',
             objectives: 'Objectifs',
             contact: 'Contact',
