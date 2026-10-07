@@ -106,7 +106,6 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav
           style={{
-            display: 'flex',
             alignItems: 'center',
             gap: '32px',
           }}
@@ -143,7 +142,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="flex md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             style={{
               background: 'none',
@@ -152,7 +151,6 @@ const Header = () => {
               padding: '8px',
               borderRadius: '8px',
               color: '#ffffff',
-              display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               transition: 'border-color 0.15s ease',
